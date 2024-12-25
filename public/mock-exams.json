@@ -1,0 +1,15 @@
+[
+    {
+      "id": 1,
+      "consultation_id": 1,
+      "type_examen": "X-Ray",
+      "radiologue": "Dr. Jane Smith",
+      "laborantin": "Lab Technician John",
+      "compte_rendu": {
+        "contenu": "X-Ray shows no abnormalities",
+        "resultat": "Clear",
+        "fichier_upload": "doctor1.png"
+      }
+    }
+  ]
+  

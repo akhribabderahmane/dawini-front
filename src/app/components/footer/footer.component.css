@@ -1,0 +1,70 @@
+/* Footer General Styles */
+.footer {
+    background-color: #ffffff; /* Dawini theme color */
+    color: #12175E;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .footer-section {
+    margin: 10px 0;
+  }
+  
+  .footer-section.about h4 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .footer-section.about p {
+    font-size: 14px;
+  }
+  
+  .footer-section.links a {
+    color: #6c63ff; /* Link color matching Dawini theme */
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .footer-section.links a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-section.social a img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+  }
+  
+  .logout-button {
+    background-color: #6c63ff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .logout-button:hover {
+    background-color: #5a53e2;
+  }
+  
+  .footer-bottom {
+    margin-top: 20px;
+    font-size: 12px;
+  }
+  /* Footer Logo */
+.footer-logo {
+    width: 150px; /* Adjust width as needed */
+    height: auto;
+    margin-bottom: 10px; /* Add space below the logo */
+  }
+  

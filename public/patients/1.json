@@ -1,0 +1,12 @@
+{
+    "id": 1,
+    "nom": "John",
+    "prenom": "Doe",
+    "telephone": "+91 8548521524",
+    "email": "johndoe@gmail.com",
+    "address": "345, Sarju Appt., Mota Varacha, Surat, Gujarat, India.",
+    "nss": "000000000000000",
+    "medcin_traitant_id": 2,
+    "personne_contact": "+91 9876543210"
+  }
+  

@@ -1,0 +1,20 @@
+{
+    "id": 1,
+    "date": "2024-12-21",
+    "duration": "45 min",
+    "doctor": {
+      "name": "Dr. John Doe",
+      "speciality": "General Practitioner"
+    },
+    "location": "Main Hospital",
+    "diagnostic": "Flu with mild symptoms",
+    "ordonnance": {
+      "status": "Valid",
+      "medications": [
+        { "name": "Paracetamol", "dose": "500 mg", "duration": "5 days" },
+        { "name": "Vitamin C", "dose": "1000 mg", "duration": "7 days" }
+      ]
+    },
+    "dpi_id": 1
+  }
+  

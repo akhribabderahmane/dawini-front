@@ -1,0 +1,25 @@
+{
+    "101": {
+      "id": 101,
+      "status": "Valid",
+      "medications": [
+        { "name": "Paracetamol", "dose": "500 mg", "duration": "5 days" },
+        { "name": "Vitamin C", "dose": "1000 mg", "duration": "7 days" }
+      ]
+    },
+    "102": {
+      "id": 102,
+      "status": "Pending",
+      "medications": [
+        { "name": "Ibuprofen", "dose": "400 mg", "duration": "3 days" }
+      ]
+    },
+    "103": {
+      "id": 103,
+      "status": "Valid",
+      "medications": [
+        { "name": "Aspirin", "dose": "75 mg", "duration": "30 days" }
+      ]
+    }
+  }
+  

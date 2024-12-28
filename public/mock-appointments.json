@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "date": "2024-12-21",
+      "doctor": "Dr. Jacob Ryan",
+      "status": "today"
+    },
+    {
+      "id": 2,
+      "date": "2024-12-22",
+      "doctor": "Dr. Emily Carter",
+      "status": "this week"
+    },
+    {
+      "id": 3,
+      "date": "2024-12-23",
+      "doctor": "Dr. William Smith",
+      "status": "next week"
+    }
+  ]
+  

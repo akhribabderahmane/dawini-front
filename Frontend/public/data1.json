@@ -1,0 +1,23 @@
+[
+    {
+      "id":33,
+      "name": "John Doe",
+      "age": 29,
+      "gender": "Male",
+      "nss": "123456789",
+      "phone": "+1 234 567 890",
+      "email": "john.doe@example.com",
+      "picture": "assets/user1.jpg"
+    },
+    {
+      "id":42,
+      "name": "Jane Smith",
+      "age": 34,
+      "gender": "Female",
+      "nss": "987654321",
+      "phone": "+1 345 678 901",
+      "email": "jane.smith@example.com",
+      "picture": "assets/user2.jpg"
+    }
+  ]
+  

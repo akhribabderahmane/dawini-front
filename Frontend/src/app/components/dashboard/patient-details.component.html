@@ -1,0 +1,46 @@
+<div class="patient-content">
+  <!-- Section gauche avec photo et détails -->
+  <div class="patient-left">
+    <div class="profile-image-container">
+      <img [src]="patientData?.photo" alt="Patient Photo" class="patient-photo-rectangle">
+    </div>
+    <div class="patient-details">
+      <div class="patient-info-item">
+        <span class="info-title">Nom:</span>
+        <span class="info-value">{{ patientData?.name }}</span>
+      </div>
+      <div class="patient-info-item">
+        <span class="info-title">NSS:</span>
+        <span class="info-value">{{ patientData?.nss }}</span>
+      </div>
+      <div class="patient-info-item">
+        <span class="info-title">Date de naissance:</span>
+        <span class="info-value">{{ patientData?.birthDate }}</span>
+      </div>
+      <div class="patient-info-item">
+        <span class="info-title">Adresse:</span>
+        <span class="info-value">{{ patientData?.address }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section droite avec informations supplémentaires -->
+  <div class="patient-right">
+    <div class="patient-info-item">
+      <span class="info-title">Email:</span>
+      <span class="info-value">{{ patientData?.email }}</span>
+    </div>
+    <div class="patient-info-item">
+      <span class="info-title">Numéro de téléphone:</span>
+      <span class="info-value">{{ patientData?.phone }}</span>
+    </div>
+    <div class="patient-info-item">
+      <span class="info-title">Médecin traitant:</span>
+      <span class="info-value">{{ patientData?.doctor }}</span>
+    </div>
+    <div class="patient-info-item">
+      <span class="info-title">Numéro à contacter:</span>
+      <span class="info-value">{{ patientData?.emergencyContact }}</span>
+    </div>
+  </div>
+</div>

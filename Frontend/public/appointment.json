@@ -1,0 +1,25 @@
+{
+    "appointmentList": [
+      {
+        "time": "10:00 AM",
+        "date": "2024-12-25",
+        "patient": {
+          "name": "John Doe",
+          "image": "assets/amira.jpg"
+        },
+        "doctor": "Dr. Smith",
+        "specialty": "Cardiology"
+      },
+      {
+        "time": "11:30 AM",
+        "date": "2024-12-25",
+        "patient": {
+          "name": "Jane Doe",
+          "image": "assets/amira.jpg"
+        },
+        "doctor": "Dr. Taylor",
+        "specialty": "Neurology"
+      }
+    ]
+  }
+  

@@ -1,0 +1,23 @@
+[
+{
+    "id": 1,
+    "date": "2024-12-01",
+    "doctor": "Dr. Smith",
+    "ordonnance": "Ordonnance 001",
+    "details": "Details of the consultation"
+  },
+  {
+    "id": 2,
+    "date": "2024-12-02",
+    "doctor": "Dr. Johnson",
+    "ordonnance": "Ordonnance 002",
+    "details": "Details of the consultation"
+  },
+  {
+    "id": 3,
+    "date": "2024-12-03",
+    "doctor": "Dr. Williams",
+    "ordonnance": "Ordonnance 003",
+    "details": "Details of the consultation"
+  }
+]

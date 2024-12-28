@@ -1,0 +1,82 @@
+
+<div class="main-content">
+  <header>
+    <h1>Patients</h1>
+    <div class="user-profile">
+      <img
+        src="assets/notifications_1436388.png"
+        alt="Notifications"
+        class="notification-icon"
+      />
+      <img src="assets/aicha.jpg" alt="User" />
+      <span>Admin</span>
+    </div>
+  </header>
+
+  <div class="patient-info">
+    <!-- Title Row -->
+    <div class="title-row">
+      <h2 class="patient-info-text">Patient Info</h2>
+      <button class="new-patient" (click)="goToAddPatient()">+ New Patient</button>
+
+    </div>
+    <hr />
+
+    <!-- Controls Row (Search and Filter) -->
+    <div class="controls">
+      <input
+        type="text"
+        placeholder="Search"
+        class="search"
+        [(ngModel)]="searchQuery"
+      />
+      <button class="filter-button">
+        Filter by Date<i class="fas fa-calendar-alt"></i>
+      </button>
+    </div>
+
+    <!-- Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Patient Name</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>NSS</th>
+          <th>Phone</th>
+          <th>Email ID</th>
+          <th>Profile</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let patient of patients | filter: searchQuery">
+          <td class="name">
+            <img src="{{ patient.picture }}" alt="User Picture" class="user-pic" />
+            {{ patient.name }}
+          </td>
+          <td>{{ patient.age }}</td>
+          <td>{{ patient.gender }}</td>
+          <td>{{ patient.nss }}</td>
+          <td>{{ patient.phone }}</td>
+          <td>{{ patient.email }}</td>
+          <td>
+          <a (click)="navigateTo(patient.id)" class="check">
+            <i class="fas fa-user"></i> Check
+          </a>
+        </td>
+
+
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="pagination">
+      <a href="#" class="Previous">Previous</a>
+      <a href="#" class="active">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">Next</a>
+    </div>
+  </div>
+</div>

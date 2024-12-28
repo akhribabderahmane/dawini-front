@@ -1,0 +1,113 @@
+h1,
+h3 {
+  font-family: "kanit", sans-serif;
+  font-weight: 600;
+}
+h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400; /* hadi regular */
+}
+th {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400; /* hadi regular */
+  font-weight: bold; /* or 600 for bold */
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400; /* Regular weight */
+}
+
+.sidebar {
+  width: 240px;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* Stack items vertically  3la jal side bare */
+  justify-content: space-between; /* Space between logo/menu and logout */
+  height: 100vh; /* Full viewport height */
+}
+
+.sidebar .logo {
+  display: flex; /* li9 flex*/
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.sidebar .logo img {
+  margin-right: 10px;
+  width: 130px; /* Adjust the width to make the logo bigger */
+  height: auto; /* Maintain the aspect ratio of the logo */
+  margin-top: 20px; /* Add space above the logo */
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif; /* hadou l fonts*/
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #555;
+  font-size: 16px;
+  display: flex; /* Align icon and text */
+  align-items: center; /* Center vertically hadi lazm bch yjou ghaya */
+}
+
+.sidebar ul li a i {
+  margin-right: 10px; /* Space between icon and text */
+  font-size: 18px; /* Icon size */
+  color: #5a6571; /* Icon color , i icon jbtha online */
+}
+.sidebar .menu li.active a i {
+  color: #695dee; /* Purple for the icon in the active menu item */
+}
+
+.sidebar ul li.active a {
+  font-weight: bold;
+  color: #695dee;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+header .user-profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensure there's space between the profile pic and notification */
+}
+
+header .user-profile img {
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.notification-icon {
+  width: 30px; /* Adjust the size of the notification icon */
+  height: 30px; /* Adjust the size of the notification icon */
+  cursor: pointer;
+  margin-left: 20px; /* Space between the admin text and notification icon */
+}
+
+/* Add the line between the search controls and patient info  hadik l mov*/

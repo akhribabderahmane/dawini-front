@@ -1,0 +1,15 @@
+[
+    { "id": 1,
+    "nom": "Sarah",
+    "prenom": "Benali",
+    "specialite": "General Practitioner",
+    "telephone": "+91 9876543211" },
+    
+    { "id": 2, "nom": "Benatmane",
+    "prenom": "Amira", "specialite": "Neurology",
+     "telephone": "+91 9876545711"
+    },
+    { "id": 3, "nom": "Houas",
+    "prenom": "Yasmine","specialite": "Pediatrics",
+    "telephone": "+91 9876545711" }
+  ]

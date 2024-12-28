@@ -1,0 +1,14 @@
+[
+    {
+      "id": 1,
+      "user_id": 1,
+      "nss": "12345678901234",
+      "date_naissance": "1990-01-01",
+      "addresse": "123 Elm Street",
+      "mutuelle": "None",
+      "medcin_traitant_id": 1,
+      "personne_contact": "0987654321",
+      "dpi_id": 1
+    }
+  ]
+  

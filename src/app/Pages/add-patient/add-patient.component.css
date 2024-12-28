@@ -1,0 +1,179 @@
+.page-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f7f9fc;
+  }
+  
+  .sidebar {
+    flex: 0 0 250px; /* Sidebar width */
+    background-color: #fff; /* Sidebar background */
+  }
+  
+  .main-content {
+    flex: 1; /* Main content takes the rest of the space */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #f7f9fc;
+  }
+  
+  .content-container {
+    margin-top: 20px;
+  }
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif; /* hadou l fonts*/
+    display: flex;
+    background-color: #f7f9fc;
+  }
+  /* Typography */
+  h1,
+  h3 {
+    font-family: "kanit", sans-serif;
+    font-weight: 600;
+  }
+  h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400; /* hadi regular */
+  }
+  th {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400; /* hadi regular */
+    font-weight: bold; /* or 600 for bold */
+  }
+  
+  p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400; /* Regular weight */
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table th,
+  table td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  table th {
+    background-color: #f4f6f9;
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    width: 240px; /* Increase the width for a larger sidebar */
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: space-between; /* Space between logo/menu and logout */
+   
+    height: auto;
+    margin-left: -35px;
+    
+  }
+  
+  
+  .sidebar .logo {
+    display: flex; /* li9 flex*/
+    align-items: center;
+    margin-bottom: 50px;
+  }
+  
+  .sidebar .logo img {
+    width: 150px;
+    margin-bottom: 30px;
+    cursor: pointer; 
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin-bottom: 20px;
+    font-family: "Poppins", sans-serif; /* hadou l fonts*/
+    margin-right: -50px;
+  }
+  
+  .sidebar ul li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 16px;
+    display: flex; /* Align icon and text */
+    align-items: center; /* Center vertically hadi lazm bch yjou ghaya */
+  }
+  
+  .sidebar ul li a i {
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 18px; /* Icon size */
+    color: #5a6571; /* Icon color , i icon jbtha online */
+    margin-left: 30px;
+  }
+  .sidebar .menu li.active a i {
+    color: #695dee; /* Purple for the icon in the active menu item */
+  }
+  
+  .sidebar ul li.active a {
+    font-weight: bold;
+    color: #695dee;
+  }
+  
+  
+  .container {
+    display: flex; /* Flexbox layout to position sidebar and main content */
+    flex-direction: row; /* Sidebar on the left, content on the right */
+    height: 100vh; /* Full viewport height */
+    background-color: #f7f9fc; /* Optional: Background color for the container */
+  }
+  
+  .container app-sidebar {
+    flex: 0 0 250px; /* Fixed width for the sidebar */
+    height: 100%; /* Full height for the sidebar */
+    background-color: #2a3f54; /* Optional: Sidebar background color */
+    color: #fff; /* Optional: Sidebar text color */
+  }
+  
+  .container > div {
+    flex-grow: 1; /* Main content takes the remaining space */
+    padding: 20px; /* Add padding around the main content */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    background-color: #ffffff; /* Optional: Background color for the main content */
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .logout {
+    display: flex;
+    align-items: center; /* Align icon and text */
+    text-decoration: none;
+    color: #4b4847;
+    font-size: 16px;
+    margin-top: auto; /* Push to the bottom */
+  }
+  
+  .logout i {
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 18px; /* Icon size */
+  }
+  
+  .fas,
+  .far {
+    font-family: "Font Awesome 5 Free", "FontAwesome", sans-serif;
+  }

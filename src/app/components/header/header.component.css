@@ -1,0 +1,114 @@
+
+  /* Conteneur principal pour fixer la taille de l'écran */
+  .main-container {
+    width: 100vw; /* Largeur de l'écran */
+    height: 100vh; /* Hauteur de l'écran */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box; 
+  }
+  
+  /* Section Header */
+  .header {
+    display: flex;
+    justify-content: space-between; /* Align logo et navigation */
+    align-items: center; /* Centrage vertical */
+    background-color: white;
+    padding: 20px 40px;
+    box-sizing: border-box; 
+    height: 15%; /* Ajuster la hauteur du header */
+  }
+  
+  /* Logo et slogan */
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo {
+    width: auto; /* Taille du logo */
+    height: auto;
+    margin-top: 50px;
+  }
+  
+  .logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #12175E;
+  }
+  
+  /* Liens de navigation */
+  .nav {
+    display: flex;
+    gap: 20px;
+    margin-right: 600px;
+   
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: #12175E;
+    font-weight: bold;
+  }
+  
+  .nav a:hover {
+    color: #6c63ff;
+  }
+  
+  /* Section Hero */
+  .hero {
+    flex: 1; /* Occupe le reste de l'espace disponible */
+    display: flex;
+    align-items: center; /* Centrage vertical */
+    justify-content: space-between; /* Espacement entre le texte et les images */
+    padding: 20px 40px;
+    box-sizing: border-box;
+  }
+  
+  /* Contenu texte */
+  .text-content {
+    max-width: 40%; /* Largeur maximale pour le texte */
+    text-align: left;
+  }
+  
+  .text-content h2 {
+    font-size: 32px;
+    color: #12175E;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .text-content p {
+    color: #12175E;
+    line-height: 1.6;
+    font-size: 18px;
+  }
+  
+  /* Conteneur des images dans le hero */
+  .hero-images {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%; /* Largeur maximale pour les images */
+    height: 100%; /* Ajuste la hauteur des images */
+    margin-top: -200px;
+    margin-left: auto;
+    
+  }
+  
+  .image-background {
+    width: 600px; /* Taille de l'image de fond */
+    height: auto;
+    margin-left: auto;
+    
+  }
+  
+  .image-foreground {
+    width: 400px; /* Taille de l'image au premier plan */
+    height: auto;
+    z-index: 2;
+    position: absolute; /* Superposition par-dessus le fond */
+  }
+  

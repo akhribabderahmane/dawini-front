@@ -1,0 +1,10 @@
+  [31morigin/admina-pages[m
+  [31morigin/feature/add-new-patient[m
+  [31morigin/feature/admin-infoPatient-resume[m
+  [31morigin/feature/admin-pages[m
+  [31morigin/feature/login-page[m
+  [31morigin/feature/modify-patient[m
+  [31morigin/feature/patient-pages[m
+  [31morigin/features/infirmier-pages[m
+  [31morigin/main[m
+  [31morigin/radiologue/laboratin[m

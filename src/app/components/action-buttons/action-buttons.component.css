@@ -1,0 +1,21 @@
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  button.save {
+    background-color: #4caf50;
+  }
+  
+  button.discard {
+    background-color: #f44336;
+  }
+  

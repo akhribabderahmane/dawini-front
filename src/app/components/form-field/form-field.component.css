@@ -1,0 +1,149 @@
+/* Patient Info Section Styling */
+.patient-info {
+  margin-bottom: 20px;
+  background-color: #f4f4f9; /* Light background for better contrast */
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+}
+
+/* Container for each patient info field */
+.patient-info-item {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;  /* Space between label and value */
+}
+
+/* Styling for the label (bold and purple) */
+.patient-info-item strong {
+  color: #800080; /* Purple color for labels */
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Styling for patient data (more contrast and softer color) */
+.patient-info-item span {
+  color: #4a4a4a; /* Darker grey for patient data */
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 12px;  /* Adding padding for a button-like appearance */
+  background-color: #f0f0f0;  /* Light background for the patient info */
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.05); /* Soft shadow for a raised effect */
+}
+
+/* Focused state for patient data */
+.patient-info-item span:focus {
+  outline: none;
+  border-color: #2196F3; /* Blue border on focus */
+  background-color: #e3f2fd; /* Light blue background */
+}
+
+/* Flex container for the form fields */
+.form-field {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px; /* Add space below the form fields */
+}
+
+/* Styles for the left and right question containers */
+.left-question, .right-question {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;  /* Increase the gap between the label and input */
+  flex: 1;  /* Allow both containers to take up equal width */
+  min-width: 250px; /* Set a minimum width for small screens */
+  max-width: 48%; /* Limit the width on larger screens */
+}
+
+/* Label styling (make it purple) */
+label {
+  font-weight: 600; /* Make label slightly bolder for better readability */
+  color: #800080;  /* Purple color for the label */
+  font-size: 14px; /* Ensure the label font size is appropriate */
+}
+
+/* Input and Select styling */
+input, select {
+  padding: 12px;
+  font-size: 14px; /* Ensure text inside input/select is readable */
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Round the corners a little more for a modern feel */
+  transition: border 0.3s ease; /* Smooth transition for focus state */
+  background-color: #f9f9f9; /* Light background */
+  color: #333;  /* Dark text */
+}
+
+/* Focus state for inputs and selects */
+input:focus, select:focus {
+  border-color: #4CAF50; /* Green border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Vibrant Dropdown styling */
+select {
+  background-color: #fff;
+  color: #444;
+  font-weight: bold;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Specific colors for care type dropdown */
+select option {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Hover state for the dropdown options */
+select:hover {
+  border-color: #4CAF50;
+  background-color: #e8f7e8; /* Light green on hover */
+}
+
+/* Active state for the selected option */
+select:focus {
+  border-color: #2196F3; /* Blue border when focused */
+  background-color: #e3f2fd; /* Light blue on focus */
+}
+
+/* Customize dropdown for better UI */
+select option:nth-child(1) {
+  background-color: #2196F3; /* Blue for "Injection" */
+  color: white;
+}
+
+select option:nth-child(2) {
+  background-color: #FF9800; /* Orange for "Blood Test" */
+  color: white;
+}
+
+select option:nth-child(3) {
+  background-color: #9C27B0; /* Purple for "Nursing Care" */
+  color: white;
+}
+
+/* Hover effect for options */
+select option:hover {
+  background-color: #B3E5FC; /* Light blue when hovered */
+  color: #333;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .form-field {
+    flex-direction: column; /* Stack the form fields vertically */
+  }
+
+  .left-question, .right-question {
+    max-width: 100%; /* Allow both to take full width */
+  }
+}

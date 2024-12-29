@@ -1,0 +1,27 @@
+<div class="container">
+  <!-- Sidebar Component -->
+  <app-sidebar></app-sidebar>
+
+  <div class="main-content">
+    <!-- Header Component -->
+    <app-header></app-header>
+
+    <!-- Form Field Component -->
+    <app-form-field></app-form-field>
+
+    <!-- Observations Component -->
+    <app-observations></app-observations>
+  </div>
+
+  <!-- Action Buttons Section -->
+  <app-action-buttons
+    [patientId]="patientId"
+    [consultationId]="consultationId"
+    [patientNss]="patientNss"
+    [careType]="careType"
+    [patientStatus]="patientStatus"
+   
+    (onSave)="savePatientData()"
+    (onDiscard)="discard()">
+  </app-action-buttons>
+</div>

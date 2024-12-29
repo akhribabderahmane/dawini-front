@@ -1,0 +1,34 @@
+<!-- Patient Info Section -->
+<div class="patient-info">
+  <p><strong>Patient NSS:</strong> {{ patientNss }}</p>
+  <p><strong>Patient ID:</strong> {{ patientId }}</p>
+  <p><strong>Consultation ID:</strong> {{ consultationId }}</p>
+</div>
+
+<!-- Existing Form Fields -->
+<div class="form-field">
+  <div class="left-question">
+    <label>Type of Care:</label>
+    <ng-container *ngIf="type === 'dropdown'; else inputField">
+      <select>
+        <option *ngFor="let option of careOptions" [value]="option">{{ option }}</option>
+      </select>
+    </ng-container>
+    <ng-template #inputField>
+      <input [type]="type" [placeholder]="placeholder" />
+    </ng-template>
+  </div>
+
+  <div class="right-question">
+    <label>Patient Status:</label>
+    <ng-container *ngIf="type === 'dropdown'; else inputField2">
+      <select>
+        <option *ngFor="let option of statusOptions" [value]="option">{{ option }}</option>
+      </select>
+    </ng-container>
+    <ng-template #inputField2>
+      <input [type]="type" [placeholder]="placeholder" />
+    </ng-template>
+  </div>
+</div>
+

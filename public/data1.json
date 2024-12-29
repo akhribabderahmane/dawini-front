@@ -1,0 +1,32 @@
+[
+  {
+    "id": 33,
+    "name": "ammari soumia",
+    "age": 29,
+    "gender": "Male",
+    "nss": "123456789",
+    "phone": "+1 234 567 890",
+    "email": "soumia@example.com",
+    "picture": "soumia.jpg"
+  },
+  {
+    "id": 42,
+    "name": "aicha lahmer",
+    "age": 34,
+    "gender": "Female",
+    "nss": "987654321",
+    "phone": "+1 345 678 901",
+    "email": "aicha@example.com",
+    "picture": "aicha.jpg"
+  },
+  {
+    "id": 12,
+    "name": "ahmed daoudi",
+    "age": 34,
+    "gender": "Male",
+    "nss": "987654321",
+    "phone": "+1 345 678 901",
+    "email": "ahmed@example.com",
+    "picture": "mrid2.jpg"
+  }
+]

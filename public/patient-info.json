@@ -1,0 +1,36 @@
+[
+    {
+      "id": 33,
+      "name": "aicha hamani",
+      "consultations": [
+        {
+          "id-consultation":22,
+          "date": "2024-01-01",
+          "doctor": "Dr. anane",
+          "ordonnance": "Prescription 1",
+          "details": "Consultation details here"
+        },
+        {
+          "id-consultation":20,
+          "date": "2024-03-15",
+          "doctor": "Dr. yessad",
+          "ordonnance": "Prescription 2",
+          "details": "Consultation details here"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "name": "lamia boualem",
+      "consultations": [
+        {
+          "id-consultation":3,
+          "date": "2024-05-10",
+          "doctor": "Dr. rachida dayem",
+          "ordonnance": "Prescription 3",
+          "details": "Consultation details here"
+        }
+      ]
+    }
+  ]
+  

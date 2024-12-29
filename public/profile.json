@@ -1,0 +1,53 @@
+[
+    {
+      "Nom": "John Doe",
+      "NSS": "1234567890",
+      "Date_de_naissance": "1985-05-15",
+      "Adresse": "123 Rue de Paris, 75001 Paris, France",
+      "Email": "johndoe@example.com",
+      "Numéro_de_téléphone": "+33 1 23 45 67 89",
+      "Médecin_traitant": "Dr. Marie Dupont",
+      "Numéro_à_contacter": "+33 6 12 34 56 78"
+    },
+    {
+      "Nom": "Alice Martin",
+      "NSS": "9876543210",
+      "Date_de_naissance": "1992-08-20",
+      "Adresse": "456 Avenue des Champs-Élysées, 75008 Paris, France",
+      "Email": "alicemartin@example.com",
+      "Numéro_de_téléphone": "+33 1 98 76 54 32",
+      "Médecin_traitant": "Dr. Jacques Lefevre",
+      "Numéro_à_contacter": "+33 6 98 76 54 32"
+    },
+    {
+      "Nom": "Pierre Dupuis",
+      "NSS": "5678901234",
+      "Date_de_naissance": "1978-12-10",
+      "Adresse": "789 Boulevard Saint-Germain, 75006 Paris, France",
+      "Email": "pierredupuis@example.com",
+      "Numéro_de_téléphone": "+33 1 67 89 01 23",
+      "Médecin_traitant": "Dr. Sophie Bernard",
+      "Numéro_à_contacter": "+33 6 56 78 90 12"
+    },
+    {
+      "Nom": "Marie Lefevre",
+      "NSS": "1122334455",
+      "Date_de_naissance": "1987-02-14",
+      "Adresse": "101 Rue de la République, 13001 Marseille, France",
+      "Email": "marielefevre@example.com",
+      "Numéro_de_téléphone": "+33 4 91 23 45 67",
+      "Médecin_traitant": "Dr. Paul Thomas",
+      "Numéro_à_contacter": "+33 6 23 45 67 89"
+    },
+    {
+      "Nom": "Lucas Girard",
+      "NSS": "5566778899",
+      "Date_de_naissance": "2000-04-22",
+      "Adresse": "202 Rue Victor Hugo, 69002 Lyon, France",
+      "Email": "lucasgirard@example.com",
+      "Numéro_de_téléphone": "+33 4 78 90 12 34",
+      "Médecin_traitant": "Dr. Claire Martin",
+      "Numéro_à_contacter": "+33 6 12 34 56 78"
+    }
+  ]
+  

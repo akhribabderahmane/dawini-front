@@ -1,0 +1,133 @@
+/* Container for the entire layout */
+.container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Sidebar styles */
+  app-sidebar {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    z-index: 10;
+  }
+  
+  /* Main content styles */
+  .main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    padding: 20px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    background-color: #ffffff;
+  }
+  
+  /* Style for the form field */
+  .form-field {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  /* Style for left and right questions */
+  .left-question, .right-question {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 48%;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  select {
+    width: 100%;
+  }
+  
+  /* Footer buttons */
+  .footer-buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 250px;  /* Align buttons after the sidebar */
+    width: calc(100% - 250px);  /* Ensure buttons cover the entire width of the content */
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+  }
+
+
+  /* Ensure the container takes up the full page height */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+}
+
+/* Space between content and buttons */
+.content {
+  flex: 1; /* Push action buttons to the bottom */
+}
+
+/* Style the action buttons */
+.action-buttons {
+  display: flex;
+  justify-content: space-between; /* Space between buttons */
+  padding: 20px;
+  background-color: #f9f9f9; /* Optional: light background for buttons section */
+  border-top: 1px solid #ddd; /* Optional: a separating line */
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+button.save {
+  background-color: #4caf50; /* Green for Save */
+}
+
+button.discard {
+  background-color: #f44336; /* Red for Discard */
+}
+
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .discard-btn {
+    background-color: #f44336;  /* Red for discard */
+    color: white;
+  }
+  
+  .save-btn {
+    background-color: #4CAF50;  /* Green for save */
+    color: white;
+  }
+  
+
+  

@@ -1,0 +1,110 @@
+<div class="appointmentsdetails-page">
+  <ng-container *ngIf="userRole === 'radiologist'; else defaultSidebar">
+    <app-sidebar1></app-sidebar1>
+  </ng-container>
+
+  <ng-template #defaultSidebar>
+    <app-sidebar></app-sidebar>
+  </ng-template>
+
+  <div class="main-contentdetails">
+    <ng-container *ngIf="userRole !== 'radiologist'">
+      <app-header-profile></app-header-profile>
+    </ng-container>
+
+    <div class="appointment-container" *ngIf="appointmentDetails; else loading">
+      <h3 class="page-title">Appointment Details</h3>
+
+      <!-- General Information -->
+      <div class="general-info">
+        <div class="row">
+          <p><strong>Date:</strong> {{ appointmentDetails.date }}</p>
+          <p><strong>Duration:</strong> {{ appointmentDetails.duration }}</p>
+        </div>
+        <div class="row">
+          <p><strong>Doctor:</strong> {{ appointmentDetails.doctor.name }} ({{ appointmentDetails.doctor.speciality }})</p>
+          <p><strong>Location:</strong> {{ appointmentDetails.location }}</p>
+        </div>
+      </div>
+
+      <!-- Nurse's Observations -->
+      <div class="observation" *ngIf="soins && soins.length > 0">
+        <h4>Nurse's Observations</h4>
+        <ul>
+          <li *ngFor="let soin of soins">
+            <p><strong>Type:</strong> {{ soin.type_soin }}</p>
+            <p><strong>Patient Condition:</strong> {{ soin.etat_patient }}</p>
+            <p><strong>Details:</strong> {{ soin.data_soin }}</p>
+            <p><strong>Observation:</strong> {{ soin.observation }}</p>
+            <hr />
+          </li>
+        </ul>
+      </div>
+
+      <!-- Diagnosis -->
+      <div class="diagnosis">
+        <h4>Diagnosis</h4>
+        <p>{{ appointmentDetails.diagnostic }}</p>
+      </div>
+
+      <!-- Exams -->
+      <div class="exams" *ngIf="exams.length > 0; else noExams">
+        <h4>Exams</h4>
+        <table class="tableau">
+          <thead>
+            <tr>
+              <th>Exam Type</th>
+              <th>Radiologue</th>
+              <th>Laborantin</th>
+              <th>Compte Rendu</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let exam of exams">
+              <td>{{ exam.type_examen }}</td>
+              <td>{{ exam.radiologue }}</td>
+              <td>{{ exam.laborantin }}</td>
+              <td>
+                <div *ngIf="exam.compte_rendu">
+                  <p><strong>Content:</strong> {{ exam.compte_rendu.contenu }}</p>
+                  <p><strong>Result:</strong> {{ exam.compte_rendu.resultat }}</p>
+                  <p>
+                    <strong>File:</strong>
+                    <a [href]="exam.compte_rendu.fichier_upload" target="_blank">View File</a>
+                  </p>
+                </div>
+                <p *ngIf="!exam.compte_rendu">No compte rendu available</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <ng-template #noExams>
+        <p>No exams available for this consultation.</p>
+      </ng-template>
+
+      <!-- Prescription -->
+      <div class="prescription">
+        <h4>Prescription</h4>
+        <p><strong>Status:</strong> {{ appointmentDetails.ordonnance.status }}</p>
+        <ul>
+          <li *ngFor="let med of appointmentDetails.ordonnance.medications">
+            <strong>{{ med.name }}</strong>: {{ med.dose }} for {{ med.duration }}
+          </li>
+        </ul>
+      </div>
+
+      <!-- Medical History -->
+      <div class="med-history" *ngIf="medicalHistory">
+        <h4>Medical History</h4>
+        <p><strong>Antecedents:</strong> {{ medicalHistory.antecedants }}</p>
+        <p><strong>Biological Summary:</strong> {{ medicalHistory.bilanBiologique }}</p>
+      </div>
+    </div>
+
+    <!-- Loading Template -->
+    <ng-template #loading>
+      <p>Loading appointment details...</p>
+    </ng-template>
+  </div>
+</div>

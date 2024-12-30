@@ -1,0 +1,10 @@
+  {"id": 3,
+  "nom": "John",
+  "prenom": "David",
+  "telephone": "+91 12345 67890",
+  "email": "davidjohn22@gmail.com",
+  "address": "345, Sarju Appt., Mota Varacha, Surat, Gujarat, Spain.",
+  "nss": "000987600009890",
+  "medcin_traitant_id": 2,
+  "personne_contact": "+91 9876543210"
+}

@@ -1,0 +1,87 @@
+<app-sidebar1></app-sidebar1>
+<div class="patient-list">
+  <h2>Patients</h2>
+
+  <!-- Filter Section -->
+  <div class="filter-container">
+    <label for="filter-date" class="filter-label"></label>
+    <div class="date-input-container">
+      <input
+        id="filter-date"
+        type="date"
+        [(ngModel)]="selectedDate"
+        (change)="filterByDate()"
+      />
+      <span class="date-placeholder" *ngIf="!selectedDate">Filter by Date</span>
+    </div>  
+    <!-- Search by NSS Placeholder -->
+    <div class="nss-input-container">
+      <input
+        id="search-nss"
+        type="text"
+        [(ngModel)]="searchNSS"
+        (keyup.enter)="searchByNSS(searchNSS)"
+        placeholder="Search by NSS"
+      />
+    </div>
+    
+  </div>
+
+  <!-- Patients Table -->
+  <table class="patients-table">
+    <thead>
+      <tr>
+        <th><i class="fa-duotone fa-solid fa-sort"></i> Patient Name</th>
+        <th><i class="fa-duotone fa-solid fa-sort"></i> Age</th>
+        <th><i class="fa-duotone fa-solid fa-sort"></i> Gender</th>
+        <th><i class="fa-duotone fa-solid fa-sort"></i> NSS</th>
+        <th><i class="fa-duotone fa-solid fa-sort"></i> Phone Number</th>
+        <th><i class="fa-duotone fa-solid fa-sort"></i> Email ID</th>
+        <th>Profile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let patient of paginatedPatients">
+        <td>{{ patient.nom }} {{ patient.prenom }}</td>
+        <td>{{ patient.age }}</td>
+        <td>{{ patient.gender }}</td>
+        <td>{{ patient.nss }}</td>
+        <td>{{ patient.telephone }}</td>
+        <td>{{ patient.email }}</td>
+        <td>
+          <button class="check-btn" (click)="viewProfile(patient.id)">
+            Check
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination Controls -->
+  <div class="pagination">
+    <button
+      (click)="previousPage()"
+      [disabled]="currentPage === 1"
+      class="pagination-btn previous"
+    >
+      Previous
+    </button>
+    <button
+      *ngFor="let page of pages"
+      (click)="goToPage(page)"
+      [class.active]="page === currentPage"
+      class="pagination-btn"
+    >
+      {{ page }}
+    </button>
+    <button
+      (click)="nextPage()"
+      [disabled]="currentPage === totalPages"
+      class="pagination-btn next"
+    >
+      Next
+    </button>
+  </div>
+
+ 
+</div>

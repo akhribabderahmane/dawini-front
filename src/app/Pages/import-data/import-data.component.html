@@ -1,0 +1,35 @@
+
+<body>
+
+    <app-sidebar-radiologue></app-sidebar-radiologue>
+    
+    <div class="main-content">
+        <app-header-radiologue></app-header-radiologue>
+    <form>
+        <div class="import-page">
+            <h1>Importer une image</h1>
+          
+            <div class="import-container">
+              <form>
+                <input type="file" (change)="onFileSelected($event)" accept=".png , .jpg" />
+                <p *ngIf="message" class="notification"></p>
+              </form>
+             <!-- Sélection du type d'image -->
+      <label for="fileType">Type d'image :</label>
+      <select id="fileType" >
+        <option value="thoracique">Thoracique</option>
+        <option value="irm">IRM</option>
+        <option value="scanner">Scanner</option>
+      </select>
+  
+            </div>
+          </div>
+      
+      <!-- Bouton d'importation -->
+      <div class="button">
+      <button (click)="importImage()">Importer</button>
+      </div>
+    </form>
+  
+</div>
+</body>

@@ -1,0 +1,45 @@
+.app-observation {
+    width: 100%;
+    margin-top: 30px;
+  }
+  
+  h3{
+    font-family: 'Kanit', sans-serif;
+  font-weight: 500;
+  color: #271E4A;
+  }
+  /* Le textarea */
+  textarea {
+    width: 100%;
+    height: 60px;              /* Plus grand */
+    padding: 15px;              /* Plus de padding pour un champ plus grand */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    resize: vertical;           /* Permet à l'utilisateur de redimensionner verticalement */
+    background-color: #f2f2f2;  /* Fond gris clair */
+    color: #808080;             /* Couleur du texte gris */
+    border: none;               /* Retirer la bordure */
+  }
+  
+  textarea:focus {
+    outline: none;              /* Enlever l'effet de focus par défaut */
+    background-color: #e6e6e6;  /* Changer légèrement le fond quand le textarea est focus */
+  }
+  button {
+    background-color: #695DEE;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500; /* Poppins Medium */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 220px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    
+   
+    
+  }

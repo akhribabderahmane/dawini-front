@@ -1,0 +1,26 @@
+<div class="sidebar">
+  <!-- Logo -->
+  <img src="/logo.svg" alt="Dawini Logo" class="logo" />
+
+  <!-- Navigation Links -->
+  <ul class="nav-links">
+    <li>
+      <button class="nav-btn" (click)="navigateToOO('profile','1')">
+        <img src="/profileIcon.png" alt="Profile Icon" class="icon" />
+        Profile
+      </button>
+    </li>
+    <li>
+      <button class="nav-btn" (click)="navigateTo('appointments')">
+        <img src="/fileIcon.png" alt="Appointments Icon" class="icon" />
+        Appointments
+      </button>
+    </li>
+  </ul>
+
+  <!-- Logout Button -->
+  <button class="logout-btn" (click)="onLogout()">
+    <img src="/logoutIcon.svg" alt="Logout Icon" class="icon" />
+    Logout
+  </button>
+</div>

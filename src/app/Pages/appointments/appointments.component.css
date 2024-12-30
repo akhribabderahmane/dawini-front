@@ -1,0 +1,13 @@
+.appointments-page {
+  display: flex;
+  height: 100vh; /* Full screen height */
+}
+  
+.main-content {
+  flex: 1; /* Take up remaining space next to sidebar */
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa; /* Background color */
+}
+  
+  

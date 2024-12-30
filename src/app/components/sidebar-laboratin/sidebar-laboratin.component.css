@@ -1,0 +1,218 @@
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif; 
+    display: flex;
+    background-color: #f7f9fc;
+  }
+  /* Style pour l'élément sélectionné */
+
+  h1{
+    color: #271E4A;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 500;}
+  h3 {
+    font-family: "kanit", sans-serif;
+    font-weight: 600;
+    color: #271E4A
+  }
+  h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400; 
+  }
+  th {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400; 
+    font-weight: bold; 
+  }
+  
+  p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400; 
+  }
+  
+  .sidebar {
+    width: 200px;
+    height: 800px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+  }
+ 
+  .sidebar .logo {
+    display: flex; /* li9 flex*/
+    align-items: center;
+    margin-bottom: 50px;
+  }
+  
+  .sidebar .logo img {
+    margin-right: 10px;
+    width: 130px; /* Adjust the width to make the logo bigger */
+    height: auto; /* Maintain the aspect ratio of the logo */
+    margin-top: 20px; /* Add space above the logo */
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin-bottom: 20px;
+    font-family: "Poppins", sans-serif; /* hadou l fonts*/
+  }
+  
+  .sidebar ul li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 16px;
+    display: flex; /* Align icon and text */
+  }
+  
+  .sidebar ul li a i {
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 18px; /* Icon size */
+    color: #5a6571; /* Icon color , i icon jbtha online */
+  }
+  .sidebar .menu li.active a i {
+    color: #695dee; /* Purple for the icon in the active menu item */
+  }
+  
+  .sidebar ul li.active a {
+    font-weight: bold;
+    color: #695dee;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  header h1 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  header .user-profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensure there's space between the profile pic and notification */
+  }
+  
+  header .user-profile img {
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  
+  .notification-icon {
+    width: 30px; /* Adjust the size of the notification icon */
+    height: 30px; /* Adjust the size of the notification icon */
+    cursor: pointer;
+    margin-left: 20px; /* Space between the admin text and notification icon */
+  }
+  
+  /* Add the line between the search controls and patient info  hadik l mov*/
+  
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    max-width: 50%;
+    justify-content: flex-start;
+    position: relative; 
+  }
+  
+  
+  
+  .user-pic {
+    width: 40px; /* Adjust the size as needed */
+    height: 40px;
+    border-radius: 50%; /* Makes the image circular  bch yji l border douwayra chwya */
+    object-fit: cover; /* Ensures the image covers the circle  l image tkoun f circle */
+    margin-right: 10px; /* Adds space between the picture and the text */
+    border: 2px solid #ccc; /* Optional border for styling */
+  }
+  
+  .logo {
+    width: 150px;
+    margin-bottom: 30px;
+    cursor: pointer; /* Indicate clickable logo */
+  }
+  
+  .nav-links {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-links li {
+    width: 100%;
+    margin: 15px 0;
+  }
+  
+  .nav-links button {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    text-decoration: none;
+    color: #12175e;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .nav-links button:hover {
+    background-color: #eaeaea;
+    color: #6c63ff; /* Add hover effect for better interactivity */
+  }
+  
+  .logout-btn {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    color: #363636;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100%;
+  }
+  
+  .logout-btn:hover {
+    background-color: #ffeaea;
+    color: #ff4d4d; /* Red color for hover on logout */
+  }
+  
+  .logout-btn .icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+  }
+  
+  .fas,
+  .far {
+    font-family: "Font Awesome 5 Free", "FontAwesome", sans-serif;
+  }
+  

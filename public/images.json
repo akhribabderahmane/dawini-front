@@ -1,0 +1,17 @@
+[
+    {
+      "name": "Image1.jpg",
+      "type": "IRM Thoracique",
+      "date": "2024-12-29"
+    },
+    {
+      "name": "Image2.png",
+      "type": "IRM Cérébrale",
+      "date": "2024-12-28"
+    },
+    {
+      "name": "Image3.jpeg",
+      "type": "Radiographie Thoracique",
+      "date": "2024-12-27"
+    }
+  ]

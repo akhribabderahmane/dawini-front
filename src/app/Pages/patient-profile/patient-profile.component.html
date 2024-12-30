@@ -1,0 +1,129 @@
+<div class="main-content">
+  <div class="appointmentsprofile-page">
+    <!-- Conditionally Render Sidebar Based on Role -->
+    <ng-container *ngIf="userRole === 'radiologist'; else patientSidebar">
+      <app-sidebar1></app-sidebar1> <!-- Radiologist Sidebar -->
+    </ng-container>
+
+    <ng-template #patientSidebar>
+      <app-sidebar></app-sidebar> <!-- Patient Sidebar -->
+      <h3 class="page-title">Profile</h3>
+      <app-header-profile></app-header-profile>
+    </ng-template>
+
+    <div class="main-contentprofile">
+
+      <div class="info">
+        <div class="patient-info" *ngIf="patientDetails">
+          <h4>Patient Information</h4>
+          <img src="/patient.png" class="patientpic" />
+          <div class="personnal-info">
+            <div class="row">
+              <div class="info-item">
+                <strong>Name:</strong> {{ patientDetails.nom }} {{ patientDetails.prenom }}
+              </div>
+              <div class="info-item">
+                <strong>Email:</strong> {{ patientDetails.email }}
+              </div>
+              <div class="info-item">
+                <strong>Phone Number:</strong> {{ patientDetails.telephone }}
+              </div>
+              <div class="info-item">
+                <strong>Address:</strong> {{ patientDetails.addresse }}
+              </div>
+            </div>
+            <div class="row">
+              <div class="info-item">
+                <strong>NSS:</strong> {{ patientDetails.nss }}
+              </div>
+              <div class="info-item">
+                <strong>Doctor:</strong>
+                <span *ngIf="doctorDetails">
+                  Dr. {{ doctorDetails.nom }} {{ doctorDetails.prenom }} ({{ doctorDetails.specialite }})
+                </span>
+              </div>
+              <div class="info-item">
+                <strong>Another contact:</strong> {{ patientDetails.personne_contact }}
+              </div>
+            </div>
+          </div>
+        </div>
+        
+         <!-- Add Button for Radiologist -->
+         <div *ngIf="userRole === 'radiologist'" class="import-button-container">
+          <button
+            class="importimage-button"
+            (click)="navigateToImport('image')"
+          >Import image </button>
+          <button
+            class="importexcel-button"
+            (click)="navigateToImport('excel')"
+          >Import excel </button>
+        </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Radiologist-Specific Tabs -->
+<div *ngIf="userRole === 'radiologist'">
+  <!-- Tab Buttons -->
+  <div class="tabs">
+    
+      <button class="tab-button"
+      [class.active]="activeTab === 'appointments'"
+      (click)="selectTab('appointments')"
+    >
+      Appointments</button>
+      <button class="tab-button"
+      [class.active]="activeTab === 'images'"
+      (click)="selectTab('images')"
+    >
+      Images/Graphs</button>
+  </div>
+
+  <!-- Tab Content -->
+  <div *ngIf="activeTab === 'appointments'" class="tab-content">
+    <app-appointments-table 
+    [userRole]="userRole" 
+    [patientId]="patientDetails.id">
+  </app-appointments-table>
+  </div>
+  <div *ngIf="activeTab === 'images'" class="tab-content">
+    <h4>Images/Graphs</h4>
+    <p>No images/graphs available.</p>
+  </div>
+</div>
+
+<!-- Patient-Specific Content -->
+<div *ngIf="userRole === 'patient'">
+  <div class="appointments">
+    <h4>Next Appointments</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Doctor</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let appointment of appointments">
+          <td>{{ appointment.date }}</td>
+          <td>{{ appointment.doctor }}</td>
+          <td>
+            <button
+              [ngClass]="{
+                'status-today': appointment.status === 'today',
+                'status-week': appointment.status === 'this week',
+                'status-next-week': appointment.status === 'next week'
+              }"
+            >
+              {{ appointment.status }}
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

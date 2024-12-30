@@ -1,0 +1,95 @@
+body, html {
+  font-family: 'Arimo', sans-serif;
+}
+ 
+.login {
+    background-color: #ffffff;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    color: #12175E;
+    margin-bottom: 20px;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .login-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .login-input:focus {
+    border-color: #6c63ff;
+    outline: none;
+  }
+  
+  .forgot-password {
+    font-size: 0.9rem;
+    color: #6c63ff;
+    text-align: right;
+    display: block;
+    margin-bottom: 20px;
+    text-decoration: none;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  
+  .login-button {
+    background-color: #695DEE;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  
+  .login-button:hover {
+    background-color: #5848cc;
+  }
+  .role-buttons {
+    margin-top: 20px;
+    margin-bottom: 20px; /* Add spacing below buttons */
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .role-button {
+    background-color: #d5d2fb;
+    color: #12175E; /* Adjust text color if needed */
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .role-button:hover {
+    background-color: #897ff2;
+  }
+  
+  
+  

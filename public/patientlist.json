@@ -1,0 +1,94 @@
+[{
+    "id": 1,
+    "nom": "John",
+    "prenom": "Doe",
+    "age": 38,
+    "gender": "Male",
+    "telephone": "+91 8548521524",
+    "email": "johndoe@gmail.com",
+    "address": "345, Sarju Appt., Mota Varacha, Surat, Gujarat, India.",
+    "nss": "000000000000000",
+    "medcin_traitant_id": 2,
+    "personne_contact": "+91 9876543210"
+
+  },
+  
+  {"id": 2,
+    "nom": "Elizabeth",
+    "prenom": "Polson",
+    "age": 28,
+    "gender": "Female",
+    "telephone": "+91 12345 67890",
+    "email": "elisabethpolson@hotmail.com",
+    "address": "345, Sarju Appt., Mota Varacha, Surat, Gujarat, germany.",
+    "nss": "000000000009890",
+    "medcin_traitant_id": 2,
+    "personne_contact": "+91 9876543210"
+},
+{"id": 3,
+"nom": "John",
+"prenom": "David",
+"age": 18,
+"gender": "Male",
+"telephone": "+91 12345 67890",
+"email": "davidjohn22@gmail.com",
+"address": "345, Sarju Appt., Mota Varacha, Surat, Gujarat, Spain.",
+"nss": "000987600009890",
+"medcin_traitant_id": 2,
+"personne_contact": "+91 9876543210"
+},
+{"id": 4,
+    "nom": "Elizabeth1",
+    "prenom": "Polson",
+    "age": 28,
+    "gender": "Female",
+    "telephone": "+91 12345 67890",
+    "email": "elisabethpolson@hotmail.com",
+    "address": "345, Sarju Appt., Mota Varacha, Surat, Gujarat, germany.",
+    "nss": "000000000009890",
+    "medcin_traitant_id": 2,
+    "personne_contact": "+91 9876543210"
+},
+{
+  "id": 1,
+  "nom": "John",
+  "prenom": "Doe",
+  "age": 38,
+  "gender": "Male",
+  "telephone": "+91 8548521524",
+  "email": "johndoe@gmail.com",
+  "address": "345, Sarju Appt., Mota Varacha, Surat, Gujarat, India.",
+  "nss": "000000000000000",
+  "medcin_traitant_id": 2,
+  "personne_contact": "+91 9876543210"
+
+},
+{
+  "id": 1,
+  "nom": "John",
+  "prenom": "Doe",
+  "age": 38,
+  "gender": "Male",
+  "telephone": "+91 8548521524",
+  "email": "johndoe@gmail.com",
+  "address": "345, Sarju Appt., Mota Varacha, Surat, Gujarat, India.",
+  "nss": "000000000000000",
+  "medcin_traitant_id": 2,
+  "personne_contact": "+91 9876543210"
+
+},
+{
+  "id": 1,
+  "nom": "John",
+  "prenom": "Doe",
+  "age": 38,
+  "gender": "Male",
+  "telephone": "+91 8548521524",
+  "email": "johndoe@gmail.com",
+  "address": "345, Sarju Appt., Mota Varacha, Surat, Gujarat, India.",
+  "nss": "000000000000000",
+  "medcin_traitant_id": 2,
+  "personne_contact": "+91 9876543210"
+
+}
+]

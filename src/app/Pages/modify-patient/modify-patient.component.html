@@ -1,0 +1,132 @@
+<app-sidebar1></app-sidebar1>
+
+<div class="main-container">
+
+  <div class="modify-patient">
+    <h2>Modify Patient Information</h2>
+    <form>
+      <!-- First row: Name and NSS -->
+      <div class="form-row">
+        <div class="form-item">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            [(ngModel)]="patientDetails.nom"
+            name="name"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="form-item">
+          <label for="nss">NSS:</label>
+          <input
+            type="text"
+            id="nss"
+            [(ngModel)]="patientDetails.nss"
+            name="nss"
+            class="form-control"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Second row: Age and Address -->
+      <div class="form-row">
+        <div class="form-item">
+          <label for="age">Age:</label>
+          <input
+            type="number"
+            id="age"
+            [(ngModel)]="patientDetails.age"
+            name="age"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="form-item">
+          <label for="address">Address:</label>
+          <input
+            type="text"
+            id="address"
+            [(ngModel)]="patientDetails.adresse"
+            name="address"
+            class="form-control"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Third row: Gender -->
+      <div class="form-row">
+        <div class="form-item">
+          <label for="gender">Gender:</label>
+          <select
+            id="gender"
+            [(ngModel)]="patientDetails.gender"
+            name="gender"
+            class="form-control"
+          >
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Fourth row: Phone number and Person to Contact -->
+      <div class="form-row">
+        <div class="form-item">
+          <label for="phone">Phone Number:</label>
+          <input
+            type="text"
+            id="phone"
+            [(ngModel)]="patientDetails.telephone"
+            name="phone"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="form-item">
+          <label for="contact">Person to Contact:</label>
+          <input
+            type="text"
+            id="contact"
+            [(ngModel)]="patientDetails.personne_contact"
+            name="contact"
+            class="form-control"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Fifth row: Email address -->
+      <div class="form-row">
+        <div class="form-item">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            [(ngModel)]="patientDetails.email"
+            name="email"
+            class="form-control"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Image modification -->
+      <div class="form-row">
+        <div class="form-item">
+          <label for="image">Modify Image:</label>
+          <input type="file" id="image" class="form-control" />
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="buttons">
+        <button type="button" class="btn btn-primary" (click)="savePatientDetails()">Save</button>
+        <button type="button" class="btn btn-secondary" (click)="discardChanges()">Discard</button>
+      </div>
+    </form>
+  </div>
+</div>

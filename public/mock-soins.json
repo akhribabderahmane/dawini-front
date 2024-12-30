@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "consulration_id": 1,
+      "type_soin": "Wound Dressing",
+      "etat_patient": "Stable",
+      "data_soin": "Dressing changed for wound healing",
+      "observation": "Healing process is progressing as expected"
+    },
+    {
+      "id": 2,
+      "consulration_id": 1,
+      "type_soin": "Injection",
+      "etat_patient": "Improved",
+      "data_soin": "Administered pain relief injection",
+      "observation": "Patient reported reduced pain post-injection"
+    },
+    {
+      "id": 3,
+      "consulration_id": 2,
+      "type_soin": "Physical Therapy",
+      "etat_patient": "Stable",
+      "data_soin": "Assisted in physiotherapy session for knee mobility",
+      "observation": "Patient showed improved range of motion"
+    }
+  ]
+  

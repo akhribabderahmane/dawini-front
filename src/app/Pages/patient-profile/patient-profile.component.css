@@ -1,0 +1,296 @@
+
+  
+ 
+  
+  
+
+body {
+    font-family: 'Arial', sans-serif;
+font-style: normal;
+font-size: medium;
+    background: rgb(220, 220, 220);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+  
+.page-title {
+    color: #271e4a;
+    position: relative;
+    top: 60px;
+    left: 280px;
+}
+.patient-info {
+  position: relative;
+  top: 10px;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  width: 950px;
+  height: auto; /* Adjust height based on content */
+}
+
+.patientpic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.personnal-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between items */
+}
+
+.info-item {
+  flex: 1 1 calc(50% - 20px); /* Half-width items with spacing */
+}
+
+
+.button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  gap: 20px; /* Add spacing between buttons */
+  width: 100%; /* Ensure the container spans the full width */
+  
+}
+
+.importimage-button,
+.importexcel-button {
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 47px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 145px;
+  height: 40px;
+}
+
+.importimage-button {
+  position: relative;
+  bottom: 40px;
+  left: 840px;
+  background-color: #41b580;
+}
+
+.importexcel-button {
+  position: relative;
+  bottom: 40px;
+  left: 540px;
+  background-color: #ffb800;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .patient-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .button-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .importimage-button,
+  .importexcel-button {
+    
+    width: 100%; /* Full-width buttons for smaller screens */
+  }
+}
+
+
+  
+  
+.appointments {
+    background: white;
+    position: relative;
+    top: 0px;
+    left: 260px;
+    padding: 20px;
+    border-radius: 47px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 496px;
+    height: 230px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  color: #271e4a;
+  background: #f0f4ff;
+}
+
+table tr:nth-child(even) {
+  background: #f9faff;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+}
+
+.status-today:hover {
+  color: white;
+  background-color: green;
+}
+
+.status-today, .status-week {
+  background-color: white; /* Default background */
+  color: black; /* Default text color */
+  border: 1px solid #ddd; /* Default border */
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.status-week:hover {
+  background-color: #ffc107;
+  color: white; /* White text on hover */
+}
+
+.general-report{
+    background: white;
+    position: fixed;
+    top: 300px;
+    left: 830px;
+    padding: 20px;
+    border-radius: 47px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 400px;
+    height: 230px;
+}
+.general-report .report {
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+.general-report .report p {
+    margin: 0 0 5px;
+}
+.general-report h3{
+    color: #271e4a;
+}
+.general-report .progress {
+    height: 8px;
+    border-radius: 4px;
+}
+
+.general-report .progress.purple {
+    background: #6f42c1;
+}
+
+.general-report .progress.green {
+    background: #28a745;
+}
+
+.general-report .progress.yellow {
+    background: #ffc107;
+}
+
+.general-report .progress.red {
+    background: #dc3545;
+}
+/* Tab Buttons */
+.tabs {
+    display: flex;
+    justify-content: flex-start;
+    margin: 20px auto;
+    width: 950px;
+    position: relative;
+    left: 250px;
+    top: 10px;
+    bottom: 0%;
+  }
+  
+  .tab-button {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #271E4A;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  
+
+  .tab-button.active {
+    color: #695DEE;
+    font-weight: bold;
+    border-bottom: 2px solid #695DEE;
+  }
+  
+  .tab-button:hover {
+    color: #695DEE;
+  }
+  .tab-content {
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 950px;
+    position: relative;
+    top: 0px;
+    left: 150px;
+  }
+/* Appointments Table Section */
+.appointments-table {
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; /* Center horizontally */
+    width: 950px;
+  }
+  
+  .appointments-table h4 {
+    color: #271e4a;
+    margin-bottom: 10px;
+  }
+  
+  .app-appointments-table {
+    width: 100%;
+  }
+  
+  /* Main Content */
+  .main-contentprofile {
+    margin-left: 260px; /* Adjust to align next to the sidebar */
+    padding-bottom: 20px; /* Add padding for scrollable content */
+  }
+    

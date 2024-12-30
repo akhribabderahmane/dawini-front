@@ -1,0 +1,11 @@
+
+  {"id": 2,
+    "nom": "Elizabeth",
+    "prenom": "Polson",
+    "telephone": "+91 12345 67890",
+    "email": "elisabethpolson@hotmail.com",
+    "address": "345, Sarju Appt., Mota Varacha, Surat, Gujarat, germany.",
+    "nss": "000000000009890",
+    "medcin_traitant_id": 2,
+    "personne_contact": "+91 9876543210"
+}

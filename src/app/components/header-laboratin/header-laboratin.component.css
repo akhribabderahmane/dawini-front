@@ -1,0 +1,36 @@
+/* Conteneur parent du header pour l'aligner à droite */
+.header-container {
+  display: flex;
+  justify-content: flex-end; /* Aligne le header à droite */
+  width: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end; /* Aligne tout le contenu à droite */
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+header .user-profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Pour séparer l'image du profil et l'icône de notification */
+}
+
+header .user-profile img {
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.notification-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.h5 {
+  font-family: 'Kanit', sans-serif;
+}

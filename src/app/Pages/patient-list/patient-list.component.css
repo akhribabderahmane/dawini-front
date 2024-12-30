@@ -1,0 +1,251 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  background-color: #f7f9fc;
+}
+
+.patient-list {
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  top: 50px;
+  left: 300px;
+  width: 900px;
+  padding: 20px;
+  background-color: #f8f9fc;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1, h3 {
+  font-family: "Kanit", sans-serif;
+}
+
+h2, th, p {
+  font-family: "Poppins", sans-serif;
+}
+
+th {
+  font-weight: bold;
+}
+
+/* Text Colors */
+p strong {
+  color: #695dee;
+}
+
+p {
+  color: #12175e;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+table th,
+table td {
+  padding: 15px;
+  text-align: left;
+  font-size: 14px;
+  color: black;
+}
+
+table th {
+  background-color: #f8f9fc;
+  color: black;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+table td {
+  border-bottom: 1px solid #ddd;
+}
+
+table tr:last-child td {
+  border-bottom: none;
+}
+
+table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Buttons */
+button {
+  padding: 8px 12px;
+  background-color: #695dee;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ffb800;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 20px;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-btn {
+  text-decoration: none;
+  margin: 0 5px;
+  padding: 5px 10px;
+  color: #695dee;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination-btn.active {
+  font-weight: bold;
+  color: #fff;
+  background-color: #695dee;
+  border-radius: 10px;
+}
+
+.pagination-btn:hover {
+  background-color: #695dee;
+  color: #fff;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+/* Filter Section */
+.filter-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.filter-label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #6c63ff;
+}
+
+.date-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #ffffff;
+  border: 2px solid rgb(148, 75, 148);
+  border-radius: 50px;
+  padding: 8px 40px;
+  gap: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.date-placeholder {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c63ff;
+  font-size: 14px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.date-input-container input[type="date"]:focus ~ .date-placeholder,
+.date-input-container input[type="date"]:not(:placeholder-shown) ~ .date-placeholder {
+  opacity: 0; /* Use opacity instead of display: none */
+  transform: translateY(-30px); /* Animation to slide up */
+}
+
+
+/* Input Field */
+.date-input-container input[type="date"] {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #6c63ff;
+  background: transparent;
+  width: 100%;
+  z-index: 1; /* Ensure input is above placeholder */
+}
+.nss-input-container {
+  position: absolute;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 2px solid rgb(148, 75, 148);
+  border-radius: 50px;
+  padding: 8px 20px;
+  gap: 8px;
+  width: 200px;
+  margin-left: 20px;
+}
+
+.nss-input-container input[type="text"] {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #6c63ff;
+  background: transparent;
+  width: 100%;
+}
+
+.nss-input-container input::placeholder {
+  color: #6c63ff;
+  font-size: 14px;
+}
+
+

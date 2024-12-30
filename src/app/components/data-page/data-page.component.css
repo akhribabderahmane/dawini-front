@@ -1,0 +1,108 @@
+/* Conteneur principal */
+.data-page {
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+    width: 850px;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+  }
+
+  
+  /* Titre principal */
+  .data-page h2 {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 500;
+    color: #271E4A;
+    
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 100%;  /* Assurez-vous que le titre prend toute la largeur */
+  }
+  
+  /* Style du tableau */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+  }
+  
+  th, td {
+    padding: 12px 20px;
+    text-align: left;
+    font-weight: 400;
+    color: #808080;
+  }
+  
+  thead th {
+    font-weight: 500;
+    color: #4135CC;
+    border-bottom: 3px solid #695DEE;
+  }
+  
+  tbody tr {
+    border-bottom: 1px solid #695DEE;
+  }
+  
+  tbody tr:last-child {
+    border-bottom: none;
+  }
+  
+  tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  button {
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    background-color: #4135CC;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #695DEE;
+  }
+  button.delete {
+   color: #bc4e4e; /* Rouge vif */
+    width: 20px;
+  }
+  
+  button.delete:hover {
+    background-color: #CC0000; /* Rouge plus foncé au survol */
+  }
+  /* Zone des observations */
+  .observations {
+    margin-top: 30px;
+  }
+  
+  .observations label {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    color: #4135CC;
+    margin-bottom: 10px;
+  }
+  
+  .observations textarea {
+    width: 100%;
+    height: 120px;
+    padding: 12px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+  }
+  
+  .observations textarea:focus {
+    outline: none;
+    border-color: #695DEE;
+    box-shadow: 0 0 5px rgba(105, 93, 238, 0.5);
+  }
+  

@@ -1,0 +1,187 @@
+.appointmentsdetails-page {
+    display: grid;
+    grid-template-columns: 1fr 4fr; /* Sidebar and main content */
+    height: 100vh; /* Full-screen height */
+    background-color: #f8f9fa; /* Light background */
+}
+
+.main-contentdetails {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between sections */
+    background-color: #f8f9fa;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    font-style: normal;
+    font-size: medium;
+    background: rgb(220, 220, 220);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.appoinement-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px; /*corners*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 90%; 
+    margin: auto; 
+    border: 1px solid #ddd;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+}
+
+.page-title {
+    color: #271e4a;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left; /* Consistent alignment */
+}
+
+.general-info {
+    border-radius: 15px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+    height: 50px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between; /* Spread items horizontally */
+    align-items: flex-start;
+    flex-wrap: wrap; /* Wrap items for smaller screens */
+}
+
+.row div {
+    display: flex;
+    flex-direction: column;
+}
+
+.row p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.row p strong {
+    font-weight: bold;
+}
+
+.observation,
+.diagnosis,
+.exams,
+.prescription,
+.med-history {
+    border-radius: 15px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px; /* Separate sections vertically */
+}
+
+.observation, 
+.exams, 
+.diagnosis {
+    display: inline-block; /* sectionsplaced side by side */
+    vertical-align: top; 
+    width: 10%; 
+    box-sizing: border-box; 
+    margin-right: 10px;}
+
+.observation,
+.exams {
+    width: 300px; 
+}
+.diagnosis {
+    width: 290px;
+}
+
+.observation ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+    margin: 0;
+}
+
+.observation li {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.tableau {
+    width: 100%;
+    max-width: 150px; 
+    border-collapse: collapse;
+    font-size: 10px;
+    margin-top: 10px;
+}
+
+.tableau th,
+.tableau td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.tableau th {
+    background: #f0f4ff;
+    font-weight: bold;
+}
+
+.tableau tr:nth-child(even) {
+    background: #f9faff;
+}
+
+.action-button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #45a049;
+}
+
+.prescription, 
+.med-history {
+    display: inline-block; /* sections placed side by side */
+    vertical-align: top; 
+    width: 45%; 
+    box-sizing: border-box; 
+    margin-right: 10px; 
+}
+
+.med-history {
+    margin-right: 0; 
+}
+
+.appoinement-container {
+    display: flex;
+    flex-wrap: wrap; /* Wrap sections for smaller screens */
+    justify-content: space-between; 
+}
+
+/* Responsive Layout for Smaller Screens */
+@media (max-width: 768px) {
+    .prescription, 
+    .med-history {
+        width: 100%; /* Stack sections on small screens */
+    }
+    .table {
+        width: 100%; /* Ensure table is full width on smaller screens */
+    }
+}

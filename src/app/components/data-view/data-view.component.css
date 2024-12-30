@@ -1,0 +1,62 @@
+/* Conteneur principal */
+.data-container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 40px;
+  width: 850;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* La structure principale est en colonne */
+}
+
+
+/* Conteneur pour le tableau et le graphique */
+.table-chart-container {
+  display: flex;               /* On met tableau et graphique côte à côte */
+  justify-content: space-between; /* Équilibrer l'espace entre les deux éléments */
+  gap: 30px;                   /* Espacement entre le tableau et le graphique */
+  margin-bottom: 30px;         /* Espacement avec les observations */
+}
+
+/* Style du tableau */
+table {
+  width: 48%;                  /* Le tableau prend 48% de la largeur */
+  border-collapse: collapse;
+ 
+}
+
+th, td {
+  padding: 12px 20px;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  color: #808080;
+}
+
+tr:first-child {
+  border-bottom: 3px solid #695DEE;
+}
+
+tr:not(:first-child) {
+  border-bottom: 1px solid #695DEE;
+}
+
+/* Style du graphique */
+.chart-container {
+  width: 48%;                  /* Le graphique prend aussi 48% de la largeur */
+}
+
+.chart-container canvas {
+  width: 100%;                 /* Prend toute la largeur du conteneur */
+  height: 100%;                /* Prend toute la hauteur disponible */
+  object-fit: contain;
+}
+
+/* Section des observations */
+.app-observation {
+  width: 100%;
+  margin-top: 30px;
+}
+
+

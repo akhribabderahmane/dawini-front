@@ -1,0 +1,49 @@
+<section id="login" class="login">
+  <!-- Role Buttons -->
+  <div class="role-buttons">
+    <button (click)="handleRedirect('admin')" class="role-button">Admin</button>
+    <button (click)="handleRedirect('medecin')" class="role-button">Doctor</button>
+    <button (click)="handleRedirect('patient')" class="role-button">Patient</button>
+    <button (click)="handleRedirect('pharmacie')" class="role-button">Pharmacy</button>
+    <button (click)="handleRedirect('infermier')" class="role-button">Infirmier</button>
+    <button (click)="handleRedirect('radiologue')" class="role-button">Radiologue</button>
+    <button (click)="handleRedirect('laboratin')" class="role-button">Labor</button>
+  </div>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <!-- Username Input -->
+      <input
+        type="text"
+        placeholder="User name"
+        formControlName="username"
+        class="login-input"
+      />
+      <div *ngIf="submitted && username?.errors" class="error-message">
+        <small *ngIf="username?.errors?.['required']">Username is required.</small>
+        <small *ngIf="username?.errors?.['minlength']">
+          Username must be at least 3 characters.
+        </small>
+      </div>
+
+      <!-- Password Input -->
+      <input
+        type="password"
+        placeholder="Password"
+        formControlName="password"
+        class="login-input"
+      />
+      <div *ngIf="submitted && password?.errors" class="error-message">
+        <small *ngIf="password?.errors?.['required']">Password is required.</small>
+        <small *ngIf="password?.errors?.['minlength']">
+          Password must be at least 6 characters.
+        </small>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="login-button">Log in</button>
+    </form>
+
+    
+  </div>
+</section>

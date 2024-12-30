@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HomeComponent } from './Pages/home/home.component';
-//import { AppointmentsComponent } from './Pages/appointments/appointments.component';
+import { AppointmentsComponent } from './Pages/appointments/appointments.component';
 import { RouterModule } from '@angular/router';
 
 @Component({

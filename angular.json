@@ -3,9 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-
     "Frontend": {
-
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -16,7 +14,6 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/frontend",
-
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -26,11 +23,8 @@
             "assets": [
               {
                 "glob": "**/*",
-
                 "input": "public",
                 "output": "/"
-
-
               }
             ],
             "styles": [
@@ -71,12 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-
               "buildTarget": "Frontend:build:production"
             },
             "development": {
               "buildTarget": "Frontend:build:development"
-
             }
           },
           "defaultConfiguration": "development"
@@ -95,10 +87,8 @@
             "assets": [
               {
                 "glob": "**/*",
-
                 "input": "public",
                 "output": "/"
-
               }
             ],
             "styles": [
@@ -112,6 +102,5 @@
   },
   "cli": {
     "analytics": "03a6eb12-be13-423c-acdf-12ca205c01f7"
-
   }
 }

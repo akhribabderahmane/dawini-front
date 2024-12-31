@@ -38,23 +38,25 @@ export class LoginComponent {
   // Handle form submission
   onSubmit() {
     this.submitted = true;
-
+  
     if (this.loginForm.invalid) {
       return;
     }
+  
+    const { username, password, role } = this.loginForm.value;
 
-    const { username, password } = this.loginForm.value;
-
-    // Perform login
-    this.userService.login(username, password).subscribe(
+    // Appeler le service de connexion avec les trois arguments
+    this.userService.login(username, password, role).subscribe(
       (response: any) => {
         console.log('Login successful:', response);
-
-        // Save token and role in localStorage
+    
+        // Sauvegarder les informations utilisateur dans localStorage
         localStorage.setItem('token', response.token);
         localStorage.setItem('role', response.user.role);
-
-        // Redirect based on role
+        localStorage.setItem('nom', response.user.nom);
+        localStorage.setItem('prenom', response.user.prenom);
+    
+        // Redirection basée sur le rôle
         this.redirectToRolePage(response.user.role, response.user.id);
       },
       (error) => {
@@ -62,52 +64,37 @@ export class LoginComponent {
         alert('Login failed. Please check your credentials.');
       }
     );
-  }
+  }    
+  
 
   // Redirect user based on their role
   private redirectToRolePage(role: string, userId: number) {
-    switch (role) {
-      case 'admin':
-        this.userService.fetchAdminData().subscribe(
-          (data) => {
-            console.log('Admin data:', data);
-            this.router.navigate(['/admin'], { state: { data } });
-          },
-          (error) => console.error('Error fetching admin data:', error)
-        );
-        break;
-      case 'medecin':
-        this.userService.fetchMedecinData(userId).subscribe(
-          (data) => {
-            console.log('Medecin data:', data);
-            this.router.navigate(['/medecin'], { state: { data } });
-          },
-          (error) => console.error('Error fetching medecin data:', error)
-        );
-        break;
-      case 'pharmacie':
-        this.userService.fetchPharmacieData(userId).subscribe(
-          (data) => {
-            console.log('Pharmacie data:', data);
-            this.router.navigate(['/pharmacie'], { state: { data } });
-          },
-          (error) => console.error('Error fetching pharmacie data:', error)
-        );
-        break;
-      case 'infermier':
-      case 'laboratin':
-      case 'radiologue':
-        this.userService.fetchPatientsData().subscribe(
-          (data) => {
-            console.log('Patients data:', data);
-            this.router.navigate(['/patients'], { state: { data } });
-          },
-          (error) => console.error('Error fetching patients data:', error)
-        );
-        break;
-      default:
-        console.error('Unknown role:', role);
-        alert('Unknown role. Please contact support.');
-    }
+  switch (role) {
+    case 'admin':
+    case 'infermier':
+    case 'radiologue':
+    case 'laboratin':
+      // Tous ces rôles vont à la liste des patients
+      this.router.navigate(['/patientlist']);
+      break;
+    case 'medecin':
+      // Rediriger vers le profil du médecin avec les données nécessaires
+      this.userService.fetchMedecinData(userId).subscribe(
+        (data) => {
+          console.log('Medecin data:', data);
+          this.router.navigate(['/doctor-profile'], { state: { data } });
+        },
+        (error) => console.error('Error fetching medecin data:', error)
+      );
+      break;
+    case 'patient':
+      // Rediriger vers le profil du patient
+      this.router.navigate([`/patient-profile/${userId}`]);
+      break;
+    default:
+      console.error('Unknown role:', role);
+      alert('Unknown role. Please contact support.');
   }
+}
+
 }

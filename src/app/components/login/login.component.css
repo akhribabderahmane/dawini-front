@@ -69,3 +69,21 @@ body, html {
     background-color: #5848cc;
   }
   
+  .login-input option {
+    font-size: 1rem;
+    color: #333;
+    padding: 10px;
+}
+
+/* Disabled option styling */
+.login-input option:disabled {
+    color: #aaa;
+}
+
+/* Optional: Style for the error message */
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: -10px;
+    text-align: left;
+}

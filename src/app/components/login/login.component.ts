@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserService } from '../../services/user.service';
+import { error } from 'console';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -51,11 +52,11 @@ export class LoginComponent {
         console.log('Login successful:', response);
 
         // Save token and role in localStorage
-        localStorage.setItem('token', response.token);
+        localStorage.setItem('token', response.id);
         localStorage.setItem('role', response.user.role);
 
         // Redirect based on role
-        this.redirectToRolePage(response.user.role, response.user.id);
+        this.redirectToRolePage(response.user.role, response.id);
       },
       (error) => {
         console.error('Login failed:', error);
@@ -101,6 +102,15 @@ export class LoginComponent {
           (data) => {
             console.log('Patients data:', data);
             this.router.navigate(['/patients'], { state: { data } });
+          },
+          (error) => console.error('Error fetching patients data:', error)
+        );
+        break;
+      case 'patient': 
+        this.userService.getPatientDetails(userId.toString()).subscribe(
+          (data) => {
+            console.log("patients data: ", data);
+            this.router.navigate([`/profile/${data.id}`], { state: { data } });
           },
           (error) => console.error('Error fetching patients data:', error)
         );

@@ -24,7 +24,8 @@ export class PatientProfileComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const patientId = this.route.snapshot.paramMap.get('id');
+    //const patientId = this.route.snapshot.paramMap.get('id');
+    const patientId = localStorage.getItem('token');
 
     if (patientId) {
       // Fetch patient details
@@ -32,9 +33,11 @@ export class PatientProfileComponent implements OnInit {
         (data) => {
           this.patientDetails = data;
 
+          console.log(data);
+
           // Fetch treating doctor's details
-          if (data.medcin_traitant_id) {
-            this.fetchDoctorDetails(data.medcin_traitant_id);
+          if (data.medcin_traitant) {
+            this.fetchDoctorDetails(data.medcin_traitant);
           }
         },
         (error) => {
@@ -57,7 +60,7 @@ export class PatientProfileComponent implements OnInit {
   private fetchDoctorDetails(doctorId: string): void {
     this.userService.getDoctorDetails(doctorId).subscribe(
       (data) => {
-        this.doctorDetails = data;
+        this.doctorDetails = data.nom;
       },
       (error) => {
         console.error('Error fetching doctor details:', error);
@@ -86,6 +89,10 @@ export class PatientProfileComponent implements OnInit {
           status = 'this week';
         } else if (appointmentDate.isSame(currentDate.clone().add(2, 'week'), 'week')) {
           status = 'next week';
+        } else if (appointmentDate < currentDate){
+          status = 'done'
+        }else{
+          status = 'upcoming'
         }
   
         // Add calculated status

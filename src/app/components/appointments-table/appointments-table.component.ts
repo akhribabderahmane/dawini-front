@@ -166,6 +166,7 @@ import { ConsultationsService } from '../../services/consultations.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-appointments-table',
@@ -181,13 +182,41 @@ export class AppointmentstableComponent implements OnInit {
   ordonnanceDetails: any = null;
   currentPage: number = 1; // Current page number
   pageSize: number = 5;
+  doctor: string = 'default';
+
+
   constructor(
     private consultationsService: ConsultationsService,
+    private userservice: UserService,
     private router: Router
   ) {}
 
   ngOnInit(): void {
-    this.consultationsService.getConsultations().subscribe(
+
+    const patientId = localStorage.getItem('token') || '{}';
+    
+    this.userservice.getPatientDetails(patientId).subscribe(
+      (data)=> {
+        
+        this.userservice.getDoctorDetails(data.medcin_traitant).subscribe(
+          (data2) => {
+            this.doctor = data2.user.nom;
+          },
+          (error) => {
+            console.error('Error fetching doctor details:', error);
+          }
+        );
+
+
+      },
+      (error) =>{
+        console.error('Erro fetching doctor: ', error);
+      }
+    )
+
+    
+
+    this.consultationsService.getConsultations(patientId).subscribe(
       (data) => {
         this.consultations = data || [];
         this.filteredConsultations = [...this.consultations];
@@ -199,11 +228,12 @@ export class AppointmentstableComponent implements OnInit {
   }
 
   // Show ordonnance details in the modal
-  viewOrdonnanceDetails(ordonnanceId: number): void {
-    this.consultationsService.getOrdonnanceDetails(ordonnanceId).subscribe(
+  viewOrdonnanceDetails(consultation_id: number): void {
+    this.consultationsService.getConsultationDetails(`${consultation_id}`).subscribe(
       (data) => {
-        this.ordonnanceDetails = data; // Set ordonnance details
+        this.ordonnanceDetails = data.ordonnance; // Set ordonnance details
         this.showModal = true; // Show the modal
+        console.log(this.ordonnanceDetails);
       },
       (error) => {
         console.error('Error fetching ordonnance details:', error);
@@ -214,6 +244,10 @@ export class AppointmentstableComponent implements OnInit {
     const startIndex = (this.currentPage - 1) * this.pageSize;
     const endIndex = startIndex + this.pageSize;
     return this.filteredConsultations.slice(startIndex, endIndex);
+  }
+
+  doctorgetter(): string{
+    return this.doctor;
   }
 
   // Go to the previous page

@@ -42,48 +42,47 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class ConsultationsService {
+
+  private apiBaseUrl = 'http://127.0.0.1:8000';
+
   constructor(private http: HttpClient) {}
 
   private consultationDetails: any = null;
 
   // Fetch consultations
-  getConsultations(): Observable<any[]> {
-    return this.http.get<any[]>('/mock-consultations.json');
+  getConsultations(patientId: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiBaseUrl}/consultations/consultations/by_patient/?patient_id=${patientId}`);
   }//there is probleme here we have to get consultation bu patient id
   getAppointments(patientId: string): Observable<any[]> {
-   // return this.http.get<any[]>(`${this.apiBaseUrl}/appointments/${patientId}`);
-   return this.http.get<any[]>(`/mock-appointments/${patientId}.json`);
+    return this.http.get<any[]>(`${this.apiBaseUrl}/consultations/consultations/by_patient/?patient_id=${patientId}`);
+   //return this.http.get<any[]>(`/mock-appointments/${patientId}.json`);
   }
   
   // Fetch ordonnance details by ID
   getOrdonnanceDetails(ordonnanceId: number): Observable<any> {
-    return this.http.get<any>(`/mock-ordonnances.json`).pipe(
+    return this.http.get<any>(`/mock-ordonnances.j`).pipe(
       map((data: any) => data[ordonnanceId]) // Extract specific ordonnance
     );
   }
 
   // Fetch consultation details by ID
   getConsultationDetails(consultationId: string): Observable<any> {
-    return this.http.get<any>(`/mock-consultation-details.json`);
+    return this.http.get<any>(`${this.apiBaseUrl}/consultations/consultations/${consultationId}/`);
   }
 
   // Fetch medical history (Dpi) by ID
   getDpiById(dpiId: string): Observable<any> {
-    return this.http.get<any>(`/mock-dpi/${dpiId}.json`);
+    return this.http.get<any>(`${this.apiBaseUrl}/consultations/dpis/${dpiId}/`);
   }
 
   // Fetch exams by consultation ID
   getExamsByConsultationId(consultationId: string): Observable<any[]> {
-    return this.http.get<any[]>(`/mock-exams.json`).pipe(
-      map((data: any[]) => data.filter((exam) => exam.consultation_id === +consultationId))
-    );
+    return this.http.get<any[]>(`${this.apiBaseUrl}/examinations/examens/by_consultation/?consultation_id=${consultationId}`);
   }
 
   // Fetch soins by consultation ID
   getSoinsByConsultationId(consultationId: string): Observable<any[]> {
-    return this.http.get<any[]>(`/mock-soins.json`).pipe(
-      map((data: any[]) => data.filter((soin) => soin.consulration_id === +consultationId))
-    );
+    return this.http.get<any[]>(`${this.apiBaseUrl}/care/soins/soins_for_consultation/?consultation_id=${consultationId}`)
   }
 
   // Save consultation details

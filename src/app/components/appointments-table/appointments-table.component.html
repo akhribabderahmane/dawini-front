@@ -28,9 +28,9 @@
     <tbody>
       <tr *ngFor="let consultation of paginatedConsultations">
         <td>{{ consultation.date }}</td>
-        <td>{{ consultation.doctor }}</td>
+        <td>{{ doctorgetter() }}</td>
         <td>
-          <button class="check-btn" (click)="viewOrdonnanceDetails(consultation.ordonnance_id)">
+          <button class="check-btn" (click)="viewOrdonnanceDetails(consultation.id)">
             Check
           </button>
         </td>
@@ -73,11 +73,11 @@
     <div class="modal-content">
       <span class="close" (click)="closeModal()">&times;</span>
       <h2>Ordonnance Details</h2>
-      <p><strong>Status:</strong> {{ ordonnanceDetails?.status }}</p>
-      <div *ngFor="let med of ordonnanceDetails?.medications">
-        <p><strong>Medication:</strong> {{ med.name }}</p>
+      <p><strong>Status:</strong> {{ ordonnanceDetails?.validation }}</p>
+      <div *ngFor="let med of ordonnanceDetails?.medicaments">
+        <p><strong>Medication:</strong> {{ med.nom }}</p>
         <p><strong>Dose:</strong> {{ med.dose }}</p>
-        <p><strong>Duration:</strong> {{ med.duration }}</p>
+        <p><strong>Duration:</strong> {{ med.duree }}</p>
         <hr />
       </div>
     </div>

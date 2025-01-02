@@ -6,9 +6,10 @@ import { AppointmentstableComponent } from '../../components/appointments-table/
 import { PatientDetailsComponent } from '../../components/patient-details/patient-details.component';
 import { RouterModule } from '@angular/router';
 import { SidebarInfComponent } from '../../components/sidebar-inf/sidebar-inf.component';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-patient-appointments',
-  imports: [AppointmentstableComponent, HeaderProfileComponent,SidebarInfComponent, RouterModule,SidebarDoctorComponent, PatientDetailsComponent],
+  imports: [AppointmentstableComponent, HeaderProfileComponent,SidebarInfComponent, RouterModule,SidebarDoctorComponent, PatientDetailsComponent, CommonModule],
   templateUrl: './patient-appointments.component.html',
   styleUrls: ['./patient-appointments.component.css'],
 })

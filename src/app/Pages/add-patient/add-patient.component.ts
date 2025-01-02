@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-patient',
-  imports: [NewPatientComponent,HeaderProfileComponent,SidebarComponent,RouterModule ],
+  imports: [NewPatientComponent,HeaderProfileComponent,RouterModule ],
   templateUrl: './add-patient.component.html',
   styleUrl: './add-patient.component.css'
 })

@@ -36,6 +36,10 @@ export class LoginComponent {
     return this.loginForm.get('password');
   }
 
+  get role(){
+    return this.loginForm.get('role');
+  }
+
   // Handle form submission
   onSubmit() {
     this.submitted = true;
@@ -47,7 +51,7 @@ export class LoginComponent {
     const { username, password, role } = this.loginForm.value;
 
     // Appeler le service de connexion avec les trois arguments
-    this.userService.login(username, password).subscribe(
+    this.userService.login(username, password, role).subscribe(
       (response: any) => {
         console.log('Login successful:', response);
 
@@ -64,7 +68,7 @@ export class LoginComponent {
       }
     );
   }    
-  
+
 
   // Redirect user based on their role
   private redirectToRolePage(role: string, userId: number) {
@@ -86,10 +90,7 @@ export class LoginComponent {
         (error) => console.error('Error fetching medecin data:', error)
       );
       break;
-    case 'patient':
-      // Rediriger vers le profil du patient
-      this.router.navigate([`/patient-profile/${userId}`]);
-      break;
+
       case 'patient': 
         this.userService.getPatientDetails(userId.toString()).subscribe(
           (data) => {

@@ -27,6 +27,10 @@ export class ConsultationsService {
     this.consultationDetails = details;
   }
 
+  getDpiById(dpiId: string): Observable<any> {
+    return this.http.get<any>(`${this.apiBaseUrl}/consultations/dpis/${dpiId}/`);
+  }
+
   // Retrieve saved consultation details
   getConsultationDetailsFromCache(): any {
     return this.consultationDetails;

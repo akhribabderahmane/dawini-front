@@ -47,7 +47,7 @@ export class LoginComponent {
     const { username, password, role } = this.loginForm.value;
 
     // Appeler le service de connexion avec les trois arguments
-    this.userService.login(username, password, role).subscribe(
+    this.userService.login(username, password).subscribe(
       (response: any) => {
         console.log('Login successful:', response);
 

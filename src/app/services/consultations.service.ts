@@ -53,5 +53,13 @@ setConsultationId(id: number): void {
 getConsultationId(): number | null {
   return this.consultationId;
 }
+
+getPatientDetails(patientId: number): Observable<any[]>{
+  return this.http.get<any[]>('');
+}
+
+createConsultation(newConsultation: object): Observable<any[]>{
+  return this.http.get<any[]>('');
+}
 }
 

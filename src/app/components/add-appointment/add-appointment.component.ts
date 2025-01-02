@@ -34,7 +34,7 @@ export class AddAppointmentComponent implements OnInit {
     // Appeler le service pour obtenir les détails du patient
     this.consultationService.getPatientDetails(Number(patientId)).subscribe({
       next: (patient) => {
-        this.dpiId = patient.dpi_id; // Récupérer dynamiquement le DPI ID
+        //this.dpiId = patient.dpi_id; // Récupérer dynamiquement le DPI ID
         console.log('DPI ID récupéré:', this.dpiId);
       },
       error: (err) => {
@@ -61,7 +61,7 @@ export class AddAppointmentComponent implements OnInit {
     this.consultationService.createConsultation(newConsultation).subscribe({
       next: (response) => {
         console.log('Consultation créée avec succès:', response);
-        this.consultationId = response.id; // Récupérer l'ID de la consultation créée
+        //this.consultationId = response.id; // Récupérer l'ID de la consultation créée
 
         if (this.consultationId !== null) {
           localStorage.setItem('currentConsultationId', this.consultationId.toString());

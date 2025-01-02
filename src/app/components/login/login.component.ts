@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserService } from '../../services/user.service';
+import { error } from 'console';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -49,25 +50,13 @@ export class LoginComponent {
     this.userService.login(username, password, role).subscribe(
       (response: any) => {
         console.log('Login successful:', response);
-    
-        // Sauvegarder les informations utilisateur dans localStorage
-        localStorage.setItem('token', response.token);
+
+        // Save token and role in localStorage
+        localStorage.setItem('token', response.id);
         localStorage.setItem('role', response.user.role);
-        localStorage.setItem('nom', response.user.nom);
-        localStorage.setItem('prenom', response.user.prenom);
-        if (response.user.role === 'infermier') {
-          this.userService.getInfermierId(response.user.id).subscribe(
-            (infermierData: any) => {
-              localStorage.setItem('infermierId', infermierData.id.toString());
-              console.log('Infermier ID stored:', infermierData.id);
-              this.redirectToRolePage(response.user.role, response.user.id);
-            },
-            (error) => console.error('Error fetching infermier data:', error)
-          );
-        } else {
-          // Redirect based on role for non-infermier roles
-          this.redirectToRolePage(response.user.role, response.user.id);
-        }
+
+        // Redirect based on role
+        this.redirectToRolePage(response.user.role, response.id);
       },
       (error) => {
         console.error('Login failed:', error);
@@ -101,6 +90,15 @@ export class LoginComponent {
       // Rediriger vers le profil du patient
       this.router.navigate([`/patient-profile/${userId}`]);
       break;
+      case 'patient': 
+        this.userService.getPatientDetails(userId.toString()).subscribe(
+          (data) => {
+            console.log("patients data: ", data);
+            this.router.navigate([`/profile/${data.id}`], { state: { data } });
+          },
+          (error) => console.error('Error fetching patients data:', error)
+        );
+        break;
     default:
       console.error('Unknown role:', role);
       alert('Unknown role. Please contact support.');

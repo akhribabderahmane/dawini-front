@@ -51,11 +51,6 @@
         <div class="general-info">
           <div class="row">
             <p><strong>Date:</strong> {{ appointmentDetails.date }}</p>
-            <p><strong>Duration:</strong> {{ appointmentDetails.duration }}</p>
-          </div>
-          <div class="row">
-            <p><strong>Doctor:</strong> {{ appointmentDetails.doctor.name }} ({{ appointmentDetails.doctor.speciality }})</p>
-            <p><strong>Location:</strong> {{ appointmentDetails.location }}</p>
           </div>
         </div>
   
@@ -120,7 +115,7 @@
         <!-- Prescription -->
         <div class="prescription">
           <h4>Prescription</h4>
-          <p><strong>Status:</strong> {{ appointmentDetails.ordonnance.status }}</p>
+          <p><strong>Status:</strong> {{ appointmentDetails.ordonnance.validation }}</p>
           <ul>
             <li *ngFor="let med of appointmentDetails.ordonnance.medications">
               <strong>{{ med.name }}</strong>: {{ med.dose }} for {{ med.duration }}

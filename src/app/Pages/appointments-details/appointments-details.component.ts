@@ -40,8 +40,8 @@ export class AppointmentsDetailsComponent implements OnInit  {
           this.appointmentDetails = data;
 
           // Fetch medical history
-          if (this.appointmentDetails?.dpi_id) {
-            this.fetchMedicalHistory(this.appointmentDetails.dpi_id);
+          if (this.appointmentDetails?.dpi) {
+            this.fetchMedicalHistory(this.appointmentDetails.dpi);
           }
 
           // Fetch exams
@@ -70,6 +70,7 @@ export class AppointmentsDetailsComponent implements OnInit  {
           antecedants: data.antecedants,
           bilanBiologique: data.bilan_biologique,
         };
+        console.log(this.medicalHistory);
       },
       (error) => {
         console.error('Error fetching medical history:', error);
@@ -103,6 +104,7 @@ export class AppointmentsDetailsComponent implements OnInit  {
       this.consultationsService.getSoinsByConsultationId(consultationId).subscribe(
         (data) => {
           this.soins = data;
+          console.log(this.soins);
         },
         (error) => {
           console.error('Error fetching soins:', error);

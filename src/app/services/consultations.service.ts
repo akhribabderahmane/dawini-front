@@ -31,31 +31,18 @@ export class ConsultationsService {
   getConsultationDetailsFromCache(): any {
     return this.consultationDetails;
   }
-    // Fetch patient details by patient ID
-getPatientDetails(patientId: number): Observable<any> {
-  return this.http.get<any>(`/patients/${patientId}.json`);
-}
-
-// Créer une nouvelle consultation (initialisation)
-createConsultation(consultationData: any): Observable<any> {
-  return this.http.post<any>(`${this.apiBaseUrl}/consultations`, consultationData);
-}
+    
 
 
- // Fetch DPI by ID
- getDpiById(dpiId: string): Observable<any> {
-  return this.http.get<any>(`${this.apiBaseUrl}/dpi/${dpiId}`);
-}
+  // Fetch exams by consultation ID
+  getExamsByConsultationId(consultationId: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiBaseUrl}/examinations/examens/by_consultation/?consultation_id=${consultationId}`);
+  }
 
-// Fetch exams by consultation ID
-getExamsByConsultationId(consultationId: string): Observable<any[]> {
-  return this.http.get<any[]>(`${this.apiBaseUrl}/exams/${consultationId}`);
-}
-
-// Fetch soins by consultation ID
-getSoinsByConsultationId(consultationId: string): Observable<any[]> {
-  return this.http.get<any[]>(`${this.apiBaseUrl}/soins/${consultationId}`);
-}
+  // Fetch soins by consultation ID
+  getSoinsByConsultationId(consultationId: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiBaseUrl}/care/soins/soins_for_consultation/?consultation_id=${consultationId}`)
+  }
 
 // Method to set the consultation ID
 setConsultationId(id: number): void {

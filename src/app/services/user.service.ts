@@ -6,13 +6,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UserService {
-  private apiUrl = 'http://your-backend-url/api'; // Replace with your backend API URL
+  private apiUrl = 'http://127.0.0.1:8000'; // Replace with your backend API URL
 
   constructor(private http: HttpClient) {}
 
   // Login request
-  login(username: string, password: string, role: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, { username, password, role });
+  login(username: string, password: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/login/`, {"role": "patient","email":username, "password": password});
   }
   
 
@@ -33,17 +33,17 @@ export class UserService {
 
   // Fetch patients data for infermier, laboratin, or radiologue
   fetchPatientsData(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/patients`);
+    return this.http.get(`${this.apiUrl}/patients/patients`);
   }
   getPatientDetails(patientId: string): Observable<any> {
-    //return this.http.get(`${this.apiUrl}/patients/${patientId}`);
-    return this.http.get(`/patients/${patientId}.json`);
+    return this.http.get(`${this.apiUrl}/patients/patients/${patientId}/`);
+    //return this.http.get(`${this.apiUrl}/patients/patients/${patientId}.json`);
   }
 
   // Fetch doctor details
   getDoctorDetails(doctorId: string): Observable<any> {
-  //  return this.http.get(`${this.apiUrl}/doctors/${doctorId}`);
-    return this.http.get(`/doctors/${doctorId}.json`);
+    return this.http.get(`${this.apiUrl}/doctors/${doctorId}/`);
+    //return this.http.get(`/doctors/${doctorId}.json`);
   }
   getInfermierId(userId: number): Observable<any> {
     return this.http.get<any>(`/api/infermiers?user_id=${userId}`);

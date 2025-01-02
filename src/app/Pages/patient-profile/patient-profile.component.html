@@ -11,13 +11,13 @@
             <div class="personnal-info">
               <div class="row">
                 <div class="info-item">
-                  <strong>Name:</strong> {{ patientDetails.nom }} {{ patientDetails.prenom }}
+                  <strong>Name:</strong> {{ patientDetails.user.nom }} {{ patientDetails.user.prenom }}
                 </div>
                 <div class="info-item">
-                  <strong>Email:</strong> {{ patientDetails.email }}
+                  <strong>Email:</strong> {{ patientDetails.user.email }}
                 </div>
                 <div class="info-item">
-                  <strong>Phone Number:</strong> {{ patientDetails.telephone }}
+                  <strong>Phone Number:</strong> {{ patientDetails.user.telephone }}
                 </div>
                 <div class="info-item">
                   <strong>Address:</strong> {{ patientDetails.addresse }}
@@ -31,7 +31,7 @@
                 <div class="info-item">
                   <strong>Doctor:</strong>
                   <span *ngIf="doctorDetails">
-                    Dr. {{ doctorDetails.nom }} {{ doctorDetails.prenom }} ({{ doctorDetails.specialite }})
+                    Dr. {{ doctorDetails.user.nom }} {{ doctorDetails.user.prenom }} ({{ doctorDetails.specialite }})
                   </span>
                 </div>
                 <div class="info-item">
@@ -53,7 +53,7 @@
                 <tbody>
                   <tr *ngFor="let appointment of appointments">
                     <td>{{ appointment.date }}</td>
-                    <td>{{ appointment.doctor }}</td>
+                    <td>{{ doctorDetails.user.nom }}</td>
                     <td>
                       <button
                         [ngClass]="{

@@ -1,0 +1,95 @@
+<div class="add-patient-container">
+    <h1 class="page-title">Add New Patient</h1>
+  
+    <!-- Form Container -->
+    <form class="form-container" (ngSubmit)="onSubmit()">
+      <!-- First Name, Last Name -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstname">First Name</label>
+          <input id="firstname" [(ngModel)]="patient.firstname" name="firstname" type="text" required placeholder="Enter first name" />
+        </div>
+        <div class="form-group">
+          <label for="lastname">Last Name</label>
+          <input id="lastname" [(ngModel)]="patient.lastname" name="lastname" type="text" required placeholder="Enter last name" />
+        </div>
+      </div>
+  
+      <!-- Phone Number, Email -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input id="phone" [(ngModel)]="patient.phone" name="phone" type="text" required placeholder="Enter phone number" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" [(ngModel)]="patient.email" name="email" type="email" required placeholder="Enter email address" />
+        </div>
+      </div>
+  
+      <!-- NSS, Date of Birth -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nss">NSS</label>
+          <input id="nss" [(ngModel)]="patient.nss" name="nss" type="text" required placeholder="Enter NSS (14 digits)" />
+        </div>
+        <div class="form-group">
+          <label for="date_naissance">Date of Birth</label>
+          <input id="date_naissance" [(ngModel)]="patient.date_naissance" name="date_naissance" type="date" required />
+        </div>
+      </div>
+  
+      <!-- Address, Mutuelle -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input id="address" [(ngModel)]="patient.address" name="address" type="text" required placeholder="Enter address" />
+        </div>
+        <div class="form-group">
+          <label for="mutuelle">Mutuelle</label>
+          <textarea id="mutuelle" [(ngModel)]="patient.mutuelle" name="mutuelle" required placeholder="Enter mutuelle details"></textarea>
+        </div>
+      </div>
+  
+      <!-- Contact Person, Medecin Traitant -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="contact_person">Contact Person</label>
+          <input id="contact_person" [(ngModel)]="patient.personne_contact" name="contact_person" type="text" required placeholder="Enter contact phone" />
+        </div>
+        <div class="form-group">
+          <label for="medecin_traitant">Médecin Traitant</label>
+          <select id="medecin_traitant" [(ngModel)]="patient.medcin_traitant_id" name="medecin_traitant" required>
+            <option value="" disabled selected>Select a doctor</option>
+            <option *ngFor="let doctor of doctors" [value]="doctor.id">Dr. {{ doctor.nom }}</option>
+          </select>
+        </div>
+      </div>
+  
+      <!-- Medical History and Biologie Summary -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="antecedents">Medical History</label>
+          <textarea id="antecedents" [(ngModel)]="dpi.antecedents" name="antecedents" placeholder="Enter medical history"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="bilan_biologique">Biologie Summary</label>
+          <textarea id="bilan_biologique" [(ngModel)]="dpi.bilan_biologique" name="bilan_biologique" placeholder="Enter biologie summary"></textarea>
+        </div>
+      </div>
+  
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <button type="submit" class="btn confirm-btn">Confirm</button>
+        <button type="button" class="btn discard-btn" (click)="discard()">Discard</button>
+      </div>
+    </form>
+    <!-- Modal for alerts -->
+<div *ngIf="modalMessage" class="modal-overlay">
+    <div class="modal-content">
+      <p>{{ modalMessage }}</p>
+      <button (click)="closeModal()" class="btn modal-btn">OK</button>
+    </div>
+  </div>
+  </div>
+  

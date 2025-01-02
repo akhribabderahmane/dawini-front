@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  background-color: #f7f9fc;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: #271E4A;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.nav-button {
+  color: #695DEE;
+  font-weight: bold;
+  border-bottom: 2px solid #695DEE;
+}
+
+.nav-button:hover {
+  color: #695DEE;
+}
+
+h1 {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 500;
+  color: #271e4a;
+  margin-bottom: 30px;
+}
+
+.exam-page {
+  padding: 20px;
+  width: 100%;
+}
+
+.exam-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  width: 860px; /* Maintain a max width for larger screens */
+  height: 300px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.textdoctor {
+  border-radius: 30px;
+  background-color: rgb(240, 239, 239);
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+
+}
+.actions {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  margin-top: 20px;
+  width: 100%; /* Ensure the actions take full width */
+}
+
+.cancel-btn,
+.next-btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 140px;
+  height: 40px;
+}
+
+.cancel-btn {
+  margin-right: 10px; /* Adds space between the cancel and next buttons */
+
+  background-color: #f44336;
+  color: white;
+}
+
+.next-btn {
+  background-color: #4caf50;
+  color: white;
+}

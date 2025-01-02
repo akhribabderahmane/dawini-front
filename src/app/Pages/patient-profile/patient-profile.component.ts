@@ -43,7 +43,7 @@ export class PatientProfileComponent implements OnInit {
       );
 
       // Fetch and process appointments
-      this.consultationsService.getAppointments(patientId).subscribe(
+      this.consultationsService.getConsultations(patientId).subscribe(
         (data) => {
           this.appointments = this.processAppointments(data);
         },

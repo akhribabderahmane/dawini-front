@@ -1,7 +1,47 @@
 <div class="appointmentsdetails-page">
-    <app-sidebar></app-sidebar>
-    <div class="main-contentdetails">
-      <app-header-profile></app-header-profile>
+  <!-- Sidebar Logic -->
+  <ng-container *ngIf="userRole === 'medecin'; else nurseOrAdminSidebar">
+    <app-sidebar-doctor></app-sidebar-doctor>
+  </ng-container>
+
+  <ng-template #nurseOrAdminSidebar>
+    <ng-container *ngIf="userRole === 'infermier'; else patientSidebar">
+      <app-sidebar-inf></app-sidebar-inf>
+    </ng-container>
+    <ng-template #patientSidebar>
+      <ng-container *ngIf="userRole === 'patient'; else adminSidebar">
+        <app-sidebar></app-sidebar>
+      </ng-container>
+    </ng-template>
+    <ng-template #adminSidebar>
+      <div class="sidebar">
+        <div class="logo">
+          <img src="/logo.svg" alt="Dawini Logo" />
+        </div>
+        <ul class="menu">
+          <li>
+            <a routerLink="/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+          </li>
+          <li class="active">
+            <a routerLink="/patientlist"><i class="fas fa-user"></i> Patients</a>
+          </li>
+          <li>
+            <a [routerLink]="['/PatientAppointments', patientId]"><i class="fas fa-calendar-alt"></i> Appointments</a>
+          </li>
+          <li>
+            <a routerLink="/users"><i class="fas fa-users"></i> Users</a>
+          </li>
+        </ul>
+        <button class="logout-btn" (click)="onLogout()">
+          <img src="/logoutIcon.svg" alt="Logout Icon" class="icon" />
+          Logout
+        </button>
+      </div>
+    </ng-template>
+  </ng-template>
+  <div class="main-contentdetails">
+    <app-header-profile></app-header-profile>
+
       
   
       <div class="appointment-container" *ngIf="appointmentDetails; else loading">

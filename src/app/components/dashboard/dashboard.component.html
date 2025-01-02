@@ -1,0 +1,151 @@
+<main class="main">
+    <header>
+      <h1>Patients</h1>
+      <div class="user-profile">
+        <img
+          src="notifications_1436388.png"
+          alt="Notifications"
+          class="notification-icon"
+        />
+        <img src="aicha.jpg" alt="User" />
+        <span>Admin</span>
+      </div>
+    </header>
+  
+    <section class="dashboard">
+      <div class="activity-overview-container">
+        <div class="rectangle-container">
+          <h3 class="activity-title">Activity Overview</h3>
+          <div class="activity-overview">
+            <div class="card blue">
+              <i class="fas fa-calendar-check"></i>
+              {{appointments}}<br />Appointments
+            </div>
+            <div class="card green">
+              <i class="fas fa-users"></i> {{patients}}<br />Patients
+            </div>
+            <div class="card yellow">
+              <i class="fas fa-user-md"></i> {{doctors}}<br />Doctors
+            </div>
+            <div class="card purple">
+              <i class="fas fa-vial"></i> {{labTests}}<br />Lab Tests
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="appointments">
+        <div class="appointments-titles">
+          <div class="title new-appointment">
+            <h2>New Appointment</h2>
+            <hr />
+          </div>
+          <div class="completed-appointment">
+            <h2>Completed Appointment</h2>
+          </div>
+        </div>
+  
+        <table>
+          <thead>
+            <tr>
+              <th><i class="fa-duotone fa-solid fa-sort"></i>Time</th>
+              <th><i class="fa-duotone fa-solid fa-sort"></i>Date</th>
+              <th>
+                <i class="fa-duotone fa-solid fa-sort"></i>Patient Name
+              </th>
+              <th><i class="fa-duotone fa-solid fa-sort"></i>Doctor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let appointment of appointmentList">
+              <td>{{appointment.time}}</td>
+              <td>{{appointment.date}}</td>
+              <td>
+                <img
+                  [src]="appointment.patient.image"
+                  alt="{{appointment.patient.name}}"
+                  class="patient-img"
+                />
+                <span>{{appointment.patient.name}}</span>
+              </td>
+              <td>{{appointment.doctor}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+      <div class="flex-row">
+        <div class="doctors">
+          <h2>Doctors</h2>
+          <ul>
+            <li *ngFor="let doctor of doctorList">
+              <div class="doctor-info">
+                <img
+                  [src]="doctor.image"
+                  alt="{{doctor.name}}"
+                  class="doctor-image"
+                />
+                <div class="doctor-details">
+                  <span class="doctor-name">{{doctor.name}}</span>
+                  <span class="doctor-experience"
+                    >{{doctor.experience}} years experience</span
+                  >
+                  <button>Check Profile</button>
+                  <p class="doctor-specialty">{{doctor.specialty}}</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="patient-status">
+        <h2>Patients par Statut</h2>
+        <div class="status-container">
+          <div class="status-text">
+            <ul>
+              <li>
+                <span class="legend orange"></span> En cours d’admission
+                ({{status.admission}}%)
+              </li>
+              <li>
+                <span class="legend green"></span> Actuellement hospitalisé
+                ({{status.hospitalized}}%)
+              </li>
+              <li>
+                <span class="legend blue"></span> Sortis
+                ({{status.discharged}}%)
+              </li>
+              <li>
+                <span class="legend gray"></span> Others
+                ({{status.others}}%)
+              </li>
+            </ul>
+          </div>
+  
+          <!-- Circle Chart Section -->
+          <div class="circle-chart">
+            <div class="circle orange">
+              <!-- Circle for Admission status -->
+              {{status.admission}}%
+            </div>
+  
+            <div class="circle green">
+              <!-- Circle for Hospitalized status -->
+              {{status.hospitalized}}%
+            </div>
+  
+            <div class="circle blue">
+              <!-- Circle for Discharged status -->
+              {{status.discharged}}%
+            </div>
+  
+            <div class="circle gray">
+              <!-- Circle for Others status -->
+              {{status.others}}%
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>

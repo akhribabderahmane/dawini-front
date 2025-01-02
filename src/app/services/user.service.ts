@@ -11,9 +11,10 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   // Login request
-  login(username: string, password: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, { username, password });
+  login(username: string, password: string, role: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/login`, { username, password, role });
   }
+  
 
   // Fetch admin data
   fetchAdminData(): Observable<any> {
@@ -44,4 +45,8 @@ export class UserService {
   //  return this.http.get(`${this.apiUrl}/doctors/${doctorId}`);
     return this.http.get(`/doctors/${doctorId}.json`);
   }
+  getInfermierId(userId: number): Observable<any> {
+    return this.http.get<any>(`/api/infermiers?user_id=${userId}`);
+  }
+  
 }

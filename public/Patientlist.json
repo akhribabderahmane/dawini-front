@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "nss": "12345678901234",
+    "date_naissance": "1990-01-01",
+    "addresse": "123 Street, City",
+    "mutuelle": "Mutuelle1",
+    "medcin_traitant_id": 2,
+    "personne_contact": "9876543210",
+    "dpi_id": 10,
+    "user": {
+      "nom": "Doe",
+      "prenom": "John",
+      "telephone": "123456789",
+      "email": "john.doe@example.com"
+    }
+  }
+]

@@ -1,8 +1,7 @@
-<<<<<<< HEAD
+
 # Frontend
 =======
-# DawiniFront
->>>>>>> e75191ffac6f79cc3c6156e9d3ec3f2469f87c26
+
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
 

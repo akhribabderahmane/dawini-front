@@ -1,0 +1,65 @@
+<div class="sidebar">
+    <img src="/logo.svg" alt="Dawini Logo" class="logo" />
+    <ul class="nav-links">
+      <li>
+        <a routerLink="/doctor-profile"><i class="fas fa-user icon"></i> Profile</a>
+      </li>
+      <li>
+        <a routerLink="/patientlist"><i class="fas fa-users icon"></i> Patients</a>
+      </li>  
+      <li>
+        <a [routerLink]="['/PatientAppointments', patientId]"><i class="fas fa-calendar-alt icon"></i> Appointments</a>
+        <ul class="submenu">
+          <!-- New Appointment (uses idPatient) -->
+          <li>
+            <a
+              [routerLink]="['/add-appointment', patientId]"
+              *ngIf="patientId"
+            >
+              <i class="fas fa-plus icon"></i> New Appointment
+            </a>
+          </li>
+          <!-- Diagnostic (uses idConsultation and idPatient) -->
+          <li>
+            <a
+              [routerLink]="['/diagnostic', consultationId]"
+              *ngIf="consultationId "
+            >
+              <i class="fas fa-stethoscope icon"></i> Diagnostic
+            </a>
+          </li>
+          <!-- Examen (uses idConsultation and idPatient) -->
+          <li>
+            <a
+              [routerLink]="['/exam', consultationId]"
+              *ngIf="consultationId "
+            >
+              <i class="fas fa-vial icon"></i> Examen
+            </a>
+          </li>
+          <!-- Ordonnance (uses idConsultation and idPatient) -->
+          <li class="active">
+            <a
+              [routerLink]="['/ordonnance', consultationId]"
+              *ngIf="consultationId "
+            >
+              <i class="fas fa-prescription icon"></i> Ordonnance
+            </a>
+          </li>
+          <!-- Resume (uses idConsultation and idPatient) -->
+          <li>
+            <a
+              [routerLink]="['/appointment-details', consultationId]"
+              *ngIf="consultationId"
+            >
+              <i class="fas fa-file-alt icon"></i> Resume
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <button class="logout-btn" (click)="onLogout()">
+      <i class="fas fa-sign-out-alt icon"></i> Logout
+    </button>
+  </div>
+  

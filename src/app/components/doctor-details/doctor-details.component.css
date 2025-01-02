@@ -1,0 +1,15 @@
+.doctor-details {
+  text-align: right; /* Ensure the content is aligned to the left */
+  margin-right:30px;
+}
+
+.doctor-details h3 {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(to right, white, #8E44AD); /* White to purple gradient */
+  border: 2px solid #8E44AD; /* Purple border */
+  border-radius: 8px; /* Rounded corners */
+  font-size: 20px;
+  color: #8E44AD; /* Purple text */
+  font-weight: bold;
+}

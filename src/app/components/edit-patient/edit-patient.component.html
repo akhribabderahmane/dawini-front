@@ -1,0 +1,139 @@
+<div class="add-patient-container">
+    <h1 class="page-title">Edit Patient Information</h1>
+  
+    <form class="form-container" (ngSubmit)="onSubmit()">
+      <!-- Patient Information -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstname">First Name</label>
+          <input
+            id="firstname"
+            type="text"
+            [(ngModel)]="user.prenom"
+            name="firstname"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="lastname">Last Name</label>
+          <input
+            id="lastname"
+            type="text"
+            [(ngModel)]="user.nom"
+            name="lastname"
+            required
+          />
+        </div>
+      </div>
+  
+      <!-- Contact Information -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input
+            id="phone"
+            type="text"
+            [(ngModel)]="user.telephone"
+            name="phone"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            id="email"
+            type="email"
+            [(ngModel)]="user.email"
+            name="email"
+            required
+          />
+        </div>
+      </div>
+  
+      <!-- NSS and Address -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nss">NSS</label>
+          <input
+            id="nss"
+            type="text"
+            [(ngModel)]="patient.nss"
+            name="nss"
+            required
+          />
+        </div>
+        <div class="form-group">
+            <label for="date_naissance">Date of Birth</label>
+            <input id="date_naissance" [(ngModel)]="patient.date_naissance" name="date_naissance" type="date" required />
+          </div>
+      </div>
+  
+      <!-- Mutuelle and Contact Person -->
+      <div class="form-row">
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input
+              id="address"
+              type="text"
+              [(ngModel)]="patient.addresse"
+              name="address"
+            />
+          </div>
+       
+        <div class="form-group">
+          <label for="personne_contact">Contact Person</label>
+          <input
+            id="personne_contact"
+            type="text"
+            [(ngModel)]="patient.personne_contact"
+            name="personne_contact"
+          />
+        </div>
+        
+      </div>
+    <!--dctor-->
+    <div class="form-row">
+        <div class="form-group">
+            <label for="mutuelle">Mutuelle</label>
+            <textarea
+              id="mutuelle"
+              [(ngModel)]="patient.mutuelle"
+              name="mutuelle"
+            ></textarea>
+          </div>
+    <div class="form-group">
+        <label for="medecin_traitant">Médecin Traitant</label>
+        <select id="medecin_traitant" [(ngModel)]="patient.medcin_traitant_id" name="medecin_traitant" required>
+          <option value="" disabled selected>Select a doctor</option>
+          <option *ngFor="let doctor of doctors" [value]="doctor.id">Dr. {{ doctor.nom }}</option>
+        </select>
+      </div>
+    </div>
+      <!-- Medical History and Biologie Summary -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="antecedents">Medical History</label>
+          <textarea
+            id="antecedents"
+            [(ngModel)]="dpi.antecedents"
+            name="antecedents"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="bilan_biologique">Biologie Summary</label>
+          <textarea
+            id="bilan_biologique"
+            [(ngModel)]="dpi.bilan_biologique"
+            name="bilan_biologique"
+          ></textarea>
+        </div>
+      </div>
+  
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <button type="submit" class="btn confirm-btn">Save Changes</button>
+        <button type="button" class="btn discard-btn" (click)="discard()">Cancel</button>
+      </div>
+    </form>
+  </div>
+  

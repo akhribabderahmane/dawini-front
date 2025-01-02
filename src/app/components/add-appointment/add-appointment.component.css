@@ -1,0 +1,90 @@
+.add-appointment-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff; /* Fond blanc */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre */
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box; /* Assure que le padding ne cause pas de débordement */
+    overflow: hidden; /* Coupe tout débordement éventuel */
+  }
+  
+  
+  .add-appointment-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #271E4A;
+    margin-bottom: 20px;
+  }
+  
+  .add-appointment-container label {
+    display: block;
+    font-size: 16px;
+    color: #4A4A4A;
+    margin-bottom: 8px;
+  }
+  
+  .add-appointment-container input[type="date"],
+  .add-appointment-container input[type="text"] {
+    width: 100%; /* Assure que l'input occupe 100% de l'espace disponible */
+  padding: 12px 15px;
+  font-size: 14px;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
+  max-width: 100%; 
+  }
+  
+  .add-appointment-container input:focus {
+    outline: none;
+    border-color: #695DEE; /* Couleur violette */
+    box-shadow: 0 0 8px rgba(105, 93, 238, 0.3); /* Lueur légère */
+  }
+  
+  .add-appointment-container .button-group {
+    display: flex;
+    justify-content: flex-end; /* Aligne les boutons à droite */
+    gap: 15px; /* Ajoute un espace entre les boutons */
+  }
+  
+  
+  .add-appointment-container .button-group button {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .add-appointment-container .cancel-button {
+    background-color: #ff9c94;
+    color: #ffffff;
+  }
+  
+  .add-appointment-container .cancel-button:hover {
+    background-color: #ff6a59;
+  }
+  
+  .add-appointment-container .next-button {
+    background-color: #41b580;
+    color: #ffffff;
+  }
+  
+  .add-appointment-container .next-button:hover {
+    background-color: #218838;
+  }
+  @media (max-width: 768px) {
+    .add-appointment-container {
+      padding: 15px; /* Réduit le padding pour les petits écrans */
+    }
+    .add-appointment-container input[type="date"] {
+      font-size: 12px; /* Réduit la taille du texte pour mieux s'adapter */
+    }
+  }
+  

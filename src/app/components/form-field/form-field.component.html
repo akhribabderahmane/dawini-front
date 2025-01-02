@@ -1,0 +1,72 @@
+<!-- Patient Info Section -->
+<div class="patient-info">
+    <h3>Patient Details</h3>
+    <p><strong>Nom:</strong> {{ patientDetails?.nom }}</p>
+    <p><strong>Prénom:</strong> {{ patientDetails?.prenom }}</p>
+    <p><strong>NSS:</strong> {{ patientDetails?.nss }}</p>
+  </div>
+  
+  <!-- Existing Form Fields -->
+  <div class="form-field">
+    <div class="left-question">
+      <label>Type of Care:</label>
+      <ng-container *ngIf="type === 'dropdown'; else inputField">
+        <select [(ngModel)]="careData.type_soin" name="type_soin">
+          <option *ngFor="let option of careOptions" [value]="option">{{ option }}</option>
+        </select>
+      </ng-container>
+      <ng-template #inputField>
+        <input 
+          [type]="type" 
+          [placeholder]="placeholder" 
+          [(ngModel)]="careData.type_soin" 
+          name="type_soin" 
+        />
+      </ng-template>
+    </div>
+  
+    <div class="right-question">
+      <label>Patient Status:</label>
+      <ng-container *ngIf="type === 'dropdown'; else inputField2">
+        <select [(ngModel)]="careData.etat_patient" name="etat_patient">
+          <option *ngFor="let option of statusOptions" [value]="option">{{ option }}</option>
+        </select>
+      </ng-container>
+      <ng-template #inputField2>
+        <input 
+          [type]="type" 
+          [placeholder]="placeholder" 
+          [(ngModel)]="careData.etat_patient" 
+          name="etat_patient" 
+        />
+      </ng-template>
+    </div>
+  </div>
+  
+  <!-- Add Date of Care Field -->
+  <div class="form-field">
+    <div class="full-width-question">
+      <label>Date of Care:</label>
+      <input 
+        type="date" 
+        [(ngModel)]="careData.date_soin" 
+        name="date_soin" 
+        required 
+      />
+    </div>
+  </div>
+  
+  <!-- Add Observation Field -->
+  <div class="form-field">
+    <div class="observations">
+      <label for="observations">Nurse's Observations:</label>
+      <textarea
+        id="observations"
+        placeholder="Enter detailed observations"
+        [(ngModel)]="careData.observation"
+        name="observation"
+        rows="4"
+      ></textarea>
+    </div>
+  </div>
+  

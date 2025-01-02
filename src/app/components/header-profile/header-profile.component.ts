@@ -6,12 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header-profile.component.css'],
 })
 export class HeaderProfileComponent implements OnInit {
-  patientName: string = '';
-  doctorName: string = '';
+  userName: string = '';
+  userRole: string = '';
 
   ngOnInit() {
-    // Retrieve patient and doctor info from local storage
-    const patient = JSON.parse(localStorage.getItem('patient') || '{}');
-    this.patientName = `${patient.nom} ${patient.prenom}`;
+    // Retrieve user info from local storage
+    const nom = localStorage.getItem('nom') || 'Unknown';
+    const prenom = localStorage.getItem('prenom') || 'User';
+    const role = localStorage.getItem('role') || 'Guest';
+
+    // Set the displayed values
+    this.userName = `${prenom} ${nom}`;
+    this.userRole = role;
   }
 }

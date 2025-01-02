@@ -1,0 +1,232 @@
+.add-patient-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #f8f9fc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .page-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #271e4a;
+  }
+  
+  .form-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 70px;
+    flex: 1 1 100%;
+  }
+  
+  .form-group {
+    flex: 1 1 calc(50% - 20px); /* Adjust width for two columns */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #271e4a;
+    white-space: nowrap;
+    
+  }
+  
+  input,
+  textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    flex: 1;
+    background-color: #EFEFEF;
+    font-size: 14px;
+    color: #333;
+    gap: 10px;
+  }
+  
+  textarea {
+    resize: none;
+    height: 100px;
+  }
+  
+  
+  
+  .action-buttons {
+    display: flex;
+  justify-content: right; /* Align buttons to the right */
+  gap: 10px; /* Add spacing between buttons */
+  margin-top: 20px; /* Add spacing above the buttons */
+  }
+  
+  .btn {
+    padding: 10px 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    width: 90px;
+    text-align: center;
+  }
+  
+  .confirm-btn {
+    background-color: #28a745;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .confirm-btn:hover {
+    background-color: #218838;
+  }
+  
+  .discard-btn {
+    background-color: #dc3545;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .discard-btn:hover {
+    background-color: #c82333;
+  }
+  
+  /* Additional Styling for Alignment */
+  input[type="date"] {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+  
+  .form-group:last-child {
+    flex: 1 1 100%;
+  }
+  
+  .tabs-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .tab {
+    padding: 10px 20px;
+    margin-right: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+  }
+  
+  .tab.active {
+    color: #271e4a;
+    border-bottom-color: #271e4a;
+  }
+  
+  .tab:hover {
+    color: #271e4a;
+  }
+  /* General Styles for Select */
+select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    background-color: #EFEFEF; /* Light background */
+    width: 100%; /* Full width */
+    appearance: none; /* Removes default arrow in some browsers */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns%3D%22http%3A//www.w3.org/2000/svg%22 viewBox%3D%220 0 4 5%22%3E%3Cpath fill%3D%22%23333%22 d%3D%22M2 0L0 2h4zM2 5L0 3h4z%22/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 10px 10px;
+  }
+  
+  /* Focus Effect */
+  select:focus {
+    outline: none;
+    border-color: #695dee; /* Highlighted border color */
+    box-shadow: 0 0 5px rgba(105, 93, 238, 0.5); /* Glow effect */
+  }
+  
+  /* Disabled State */
+  select:disabled {
+    background-color: #e9ecef; /* Gray background */
+    color: #6c757d; /* Gray text */
+    cursor: not-allowed;
+  }
+  
+  /* Option Styles */
+  select option {
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff; /* White background */
+  }
+  
+  /* Hover Effect for Options (if supported) */
+  select:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Container for Label and Select */
+  .select-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Space between label and select */
+  }
+  /* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+  }
+  
+  /* Modal Text */
+  .modal-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Modal Button */
+  .modal-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .modal-btn:hover {
+    background-color: #218838;
+  }
+  

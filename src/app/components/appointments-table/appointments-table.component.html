@@ -23,6 +23,7 @@
         <th> <i class="fa-duotone fa-solid fa-sort"></i> Doctor</th>
         <th><i class="fa-duotone fa-solid fa-sort"></i> Ordonnance</th>
         <th><i class="fa-duotone fa-solid fa-sort"></i> Details</th>
+        <th *ngIf="isInfermier"><i class="fa-duotone fa-solid fa-sort"></i> Action</th>
       </tr>
     </thead>
     <tbody>
@@ -36,6 +37,14 @@
         </td>
         <td>
           <button class="check-btn" (click)="viewDetails(consultation.id)">Check</button>
+        </td>
+        <td *ngIf="isInfermier">
+          <button
+            class="create-care-btn"
+            (click)="goToAddCare(consultation.id)"
+          >
+            Créer Soin
+          </button>
         </td>
       </tr>
     </tbody>

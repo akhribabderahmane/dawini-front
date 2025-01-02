@@ -1,0 +1,12 @@
+<div class="add-appointment-container">
+    <h2>Add New Appointment</h2>
+    
+    <label for="date">Date</label>
+    <input type="date" id="date" [(ngModel)]="consultationDate" />
+    
+    <div class="button-group">
+      <button class="cancel-button" (click)="cancel()">Cancel</button>
+      <button class="next-button" (click)="createConsultation()">Next</button>
+    </div>
+  </div>
+  

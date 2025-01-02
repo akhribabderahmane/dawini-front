@@ -1,0 +1,24 @@
+<div class="prescription-table">
+  <!-- Custom file input -->
+  <label class="custom-file-upload">
+    <input type="file" (change)="onFileSelected($event)" />
+    Prescription
+  </label>
+  <table *ngIf="items.length > 0">
+    <thead>
+      <tr>
+        <th>Item Description</th>
+        <th>Dose</th>
+        <th>Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{ item.nom }}</td>
+        <td>{{ item.dose }}</td>
+        <td>{{ item.duree }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <p *ngIf="items.length === 0">No medications available.</p>
+</div>

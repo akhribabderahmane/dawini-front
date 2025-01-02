@@ -1,0 +1,35 @@
+.appointments-page {
+    display: flex;
+    height: 100vh; /* Full screen height */
+  }
+    
+  .main-content{
+    flex: 1; /* Take up remaining space next to sidebar */
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa; /* Background color */
+  }
+    
+  .add-appointment-container {
+    text-align: right;
+    margin: 20px 0;
+  }
+  
+  .add-appointment-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #41b580;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .add-appointment-btn:hover {
+    background-color: #3a9c70;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  

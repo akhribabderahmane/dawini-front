@@ -1,0 +1,114 @@
+<div class="main-content">
+    <header style="display: flex; align-items: center; justify-content: space-between;">
+      <h1>Patients</h1>
+      <!-- Add Patient Button -->
+      <button class="add-patient-btn" (click)="goToAddPatient()">Add Patient</button>
+    </header>
+  
+    <div class="patient-info">
+      <!-- Title Row -->
+      <div class="title-row">
+        <h2 class="patient-info-text">Patient Info</h2>
+      </div>
+      <hr />
+  
+      <!-- Controls Row -->
+      <div class="controls">
+        <!-- Show specific search inputs based on role -->
+        <ng-container *ngIf="isDoctor; else genericFilter">
+          <!-- Filter bar for doctors -->
+          <input
+            type="text"
+            placeholder="Search by NSS"
+            class="search"
+            [(ngModel)]="searchQuery"
+          />
+          <div class="qr-code-container">
+            <label for="qrCodeUpload" class="qr-code-btn">
+              Upload QR Code
+            </label>
+            <input
+              type="file"
+              id="qrCodeUpload"
+              (change)="onQRUpload($event)"
+            />
+            <span>Scan a QR code to search for a patient</span>
+          </div>
+        </ng-container>
+        <!-- Generic filter for other roles -->
+        <ng-template #genericFilter>
+          <input
+            type="text"
+            placeholder="Search by Name or First Name"
+            class="search"
+            [(ngModel)]="searchQuery"
+          />
+        </ng-template>
+      </div>
+  
+      <!-- Table -->
+      <table>
+        <thead>
+          <tr>
+            <th>Patient Name</th>
+            <th>Date of Birth</th>
+            <th>NSS</th>
+            <th>Phone</th>
+            <th>Email ID</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let patient of displayedPatients">
+            <td>{{ patient.nom }} {{ patient.prenom }}</td>
+            <td>{{ patient.date_naissance }}</td>
+            <td>{{ patient.nss }}</td>
+            <td>{{ patient.phone }}</td>
+            <td>{{ patient.email }}</td>
+            <td>
+              <!-- Modify Button (Visible only for admin and medcin) -->
+              <button
+                *ngIf="isAdminOrDoctor"
+                class="modify-btn"
+                (click)="goToEditPatient(patient.id)"
+              >
+                Modify
+              </button>
+            </td>
+            <td>
+              <a  (click)="navigateTo(patient.id, patient.nom, patient.prenom, patient.nss)" class="check">
+                <i class="fas fa-user"></i> Check
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <!-- Pagination Controls -->
+      <div class="pagination">
+        <button
+          (click)="previousPage()"
+          [disabled]="currentPage === 1"
+          class="pagination-btn previous"
+        >
+          Previous
+        </button>
+        <button
+          *ngFor="let page of pages"
+          (click)="goToPage(page)"
+          [class.active]="page === currentPage"
+          class="pagination-btn"
+        >
+          {{ page }}
+        </button>
+        <button
+          (click)="nextPage()"
+          [disabled]="currentPage === totalPages"
+          class="pagination-btn next"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,46 @@
+<div class="ordonnance">
+  <h1>Ordonnance</h1>
+  <form>
+    <div class="form-group">
+      <label for="nom">Nom du Médicament</label>
+      <input
+        type="text"
+        id="nom"
+        [(ngModel)]="formData.nom"
+        placeholder="Nom du médicament"
+        name="nom"
+      />
+    </div>
+    <div class="form-group">
+      <label for="dose">Dose</label>
+      <input
+        type="text"
+        id="dose"
+        [(ngModel)]="formData.dose"
+        placeholder="Dose"
+        name="dose"
+      />
+    </div>
+    <div class="form-group">
+      <label for="duree">Durée</label>
+      <input
+        type="text"
+        id="duree"
+        [(ngModel)]="formData.duree"
+        placeholder="Durée"
+        name="duree"
+      />
+    </div>
+    <button type="button" (click)="addMedicament()">Ajouter Médicament</button>
+  </form>
+
+  <h2>Médicaments Ajoutés</h2>
+  <ul>
+    <li *ngFor="let med of medicaments">
+      {{ med.nom }} - {{ med.dose }} - {{ med.duree }}
+    </li>
+  </ul>
+
+  <button type="button" (click)="saveOrdonnance()">Save</button>
+  <button type="button" (click)="goToOrdonnance()">View Last Ordonnance</button>
+</div>

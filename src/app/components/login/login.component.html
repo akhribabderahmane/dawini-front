@@ -23,12 +23,27 @@
         formControlName="password"
         class="login-input"
       />
+
       <div *ngIf="submitted && password?.errors" class="error-message">
         <small *ngIf="password?.errors?.['required']">Password is required.</small>
         <small *ngIf="password?.errors?.['minlength']">
           Password must be at least 6 characters.
         </small>
       </div>
+  <!-- Role Select -->
+<select formControlName="role" class="login-input">
+  <option value="" disabled selected>Select Role</option>
+  <option value="admin">Admin</option>
+  <option value="medecin">Medecin</option>
+  <option value="Patient">Patient</option>
+  <option value="pharmacie">Pharmacie</option>
+  <option value="infermier">Infermier</option>
+  <option value="laboratin">Laboratin</option>
+  <option value="radiologue">Radiologue</option>
+</select>
+<div *ngIf="submitted && role?.errors" class="error-message">
+  <small *ngIf="role?.errors?.['required']">Role is required.</small>
+</div>
 
       <!-- Submit Button -->
       <button type="submit" class="login-button">Log in</button>

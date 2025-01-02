@@ -1,0 +1,708 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+  }
+  
+  body {
+    height: 100%; /* Ensures the html and body take full height */
+    margin: 0;
+    font-family: "Poppins", sans-serif; /* hadou l fonts*/
+    display: flex;
+    background-color: #fafafb;
+  }
+  
+  .container {
+    display: flex;
+    background-color: #f1f2f3;
+    width: 100%;
+    min-height: 100vh; /* Ensures container fills full viewport height */
+  }
+  .main {
+    flex-grow: 1; /* Allows main content to grow and take remaining space */
+    padding: 20px;
+  }
+  .dashboard {
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* Increase the width of the second column */
+    grid-template-rows: auto auto; /* Two rows, adjust height */
+    gap: 20px; /* Space between rows and columns */
+    padding: 20px;
+    width: 100%; /* Ensure it stretches full width */
+  }
+  .activity-overview-container {
+    display: flex;
+  
+    grid-column: 1 / 2; /* Place in the first column */
+    grid-row: 1 / 2; /* Place in the first row */
+  }
+  /* Activity Overview */
+  
+  /* Sidebar Styles */
+  .sidebar {
+    width: 240px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: flex-start; /* Align items at the top */
+    height: auto; /* Remove fixed height, allowing it to grow with content */
+    min-height: 108vh; /* Ensure it fills full viewport height */
+  }
+  
+  .sidebar .logo {
+    display: flex; /* li9 flex*/
+    align-items: center;
+    margin-bottom: 50px;
+  }
+  
+  .sidebar .logo img {
+    margin-right: 10px;
+    width: 130px; /* Adjust the width to make the logo bigger */
+    height: auto; /* Maintain the aspect ratio of the logo */
+    margin-top: 20px; /* Add space above the logo */
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: none; /* Remove the lines between items */
+    margin-bottom: 25px; /* Increase this value for more spacing */
+  }
+
+  
+.sidebar ul li:last-child {
+  border-bottom: none; /* Ensure no border for the last item */
+}
+  
+  .sidebar ul li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 16px;
+    display: flex; /* Align icon and text */
+    align-items: center; /* Center vertically hadi lazm bch yjou ghaya */
+  }
+  
+  .sidebar ul li a i {
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 18px; /* Icon size */
+    color: #5a6571; /* Icon color , i icon jbtha online */
+  }
+  .sidebar .menu li.active a i {
+    color: #695dee; /* Purple for the icon in the active menu item */
+  }
+  
+  .sidebar ul li.active a {
+    font-weight: bold;
+    color: #695dee;
+  }
+  
+  /* Header Styles */
+  /* To make the image bigger */
+  /* To make the image bigger */
+  /* To position the user profile on the right side */
+  header {
+    display: flex;
+    justify-content: space-between; /* Ensures the items are spaced out */
+    align-items: center;
+    width: 100%; /* Makes sure the header takes full width */
+  }
+  
+  .user-profile {
+    display: flex;
+    justify-content: flex-end; /* Aligns items to the right */
+    align-items: center;
+    margin-left: auto; /* Pushes the profile to the far right */
+  }
+  
+  .user-profile img {
+    width: 40px; /* You can keep the size as it is or adjust if needed */
+    height: 40px;
+    border-radius: 50%; /* Keeps it circular */
+  }
+  
+  .user-profile span {
+    margin-left: 10px; /* Adds space between the image and name */
+    font-size: 16px; /* Adjust if needed */
+  }
+  
+  header h1 {
+    font-size: 24px;
+    color: #333;
+  }
+  /* User Profile Section in Header */
+  
+  .notification-icon {
+    width: 30px; /* Adjust the size of the notification icon */
+    height: 30px; /* Adjust the size of the notification icon */
+    cursor: pointer;
+    margin-left: 20px; /* Space between the admin text and notification icon */
+  }
+  
+  nav ul {
+    list-style: none;
+    width: 100%;
+  }
+  
+  nav ul li {
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  nav ul li.active {
+    background-color: #e5e5ff;
+    color: #5a67d8;
+  }
+  
+  .logout {
+    margin-top: auto;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  /* Main Content */
+  .main {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .profile-info {
+    text-align: right;
+  }
+  
+  /* Activity Overview (Top Left) */
+  .activity-overview {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Grid for the 4 cards */
+    gap: 10px;
+  }
+  .card {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 18px;
+  }
+  .activity-title {
+    grid-column: 1 / 3; /* Span across both columns */
+    font-size: 1.2rem;
+    margin-bottom: 10px; /* Adds space between title and cards */
+    color: #555;
+    text-align: left;
+    padding: 10px; /* Adjust padding as needed */
+  
+    padding: 10px 0; /* Adjust padding as needed */
+    font-weight: bold; /* Make the title bold */
+    margin-bottom: 10px; /* Add space below the title */
+  }
+  .rectangle-container {
+    width: 100%;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-top: 10px; /* Reduced margin-top */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    grid-row: 1 / 2; /* Align with the first row (same as New Appointments) */
+    display: flex;
+    flex-direction: column; /* Stack title and cards vertically */
+    padding: 20px; /* Add padding to the container */
+    width: 397.41px; /* Adjust this value as needed */
+    height: 333.18px; /* Adjust this value to match the desired size */
+    grid-column: 2 / 3; /* Place rectangle in the second column */
+  }
+  
+  .card.blue {
+    color: #f0f0ef;
+    background-color: #695dee; /* Light blue background */
+  }
+  
+  .card.green {
+    color: #f0f0ef;
+    background-color: #41b580;
+  }
+  
+  .card.yellow {
+    color: #101010;
+    background-color: #fff598; /* Light blue background */
+  }
+  
+  .card.purple {
+    color: #0a090a;
+    background-color: #cca4ff;
+  }
+  
+  /* New Appointments Table (Top Right) */
+  .appointments {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    margin-top: 10px;
+    overflow-y: auto; /* Allow vertical scroll */
+    flex-grow: 1; /* Allow the container to grow */
+  }
+  
+  table {
+    width: 100%;
+    table-layout: fixed; /* Ensures equal column widths */
+    border-collapse: collapse;
+    height: 100%; /* Ensure the table takes full height of the container */
+    overflow-y: auto; /* Enable scrolling within the table */
+  }
+  
+  table tbody {
+    display: block;
+    height: 100%; /* Allow the tbody to take the full height */
+    overflow-y: auto; /* Enable scrolling for the tbody */
+  }
+  
+  table th,
+  table td {
+    padding: 7px;
+    text-align: left;
+    width: 100%; /* Ensure cells fill the available space */
+  }
+  
+  table thead {
+    position: sticky;
+    top: 0; /* Keeps the header at the top when scrolling */
+    background-color: #f1f1f1; /* Ensures the header has a background color */
+    z-index: 1; /* Keeps the header on top of the table rows */
+    display: block;
+    table-layout: fixed;
+    width: 100%;
+  }
+  
+  /* Adjust width for each column */
+  table th:nth-child(1),
+  table td:nth-child(1) {
+    width: 20%; /* Adjust width for the first column */
+    padding-left: 15px; /* Adjust left padding for spacing */
+    padding-right: 15px; /* Adjust right padding for spacing */
+  }
+  
+  table th:nth-child(2),
+  table td:nth-child(2) {
+    width: 30%; /* Adjust width for the second column */
+    padding-left: 20px; /* Adjust left padding for spacing */
+    padding-right: 20px; /* Adjust right padding for spacing */
+  }
+  
+  table th:nth-child(3),
+  table td:nth-child(3) {
+    width: 33%; /* Adjust width for the third column */
+    padding-left: 12px; /* Adjust left padding for spacing */
+    padding-right: 12px; /* Adjust right padding for spacing */
+    margin-left: auto;
+  }
+  
+  table th:nth-child(4),
+  table td:nth-child(4) {
+    width: 17%; /* Adjust width for the fourth column */
+    padding-left: 18px; /* Adjust left padding for spacing */
+    padding-right: 18px; /* Adjust right padding for spacing */
+    margin-left: auto;
+  }
+  th i {
+    margin-right: 10px; /* Adjust the value as needed */
+  }
+  
+  /* Doctors Section (Bottom Left) */
+  .doctors {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / 3; /* Place in columns 1 and 2 */
+    grid-row: 2 / 3; /* Place in the second row */
+  }
+  ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Patients Status Section (Bottom Right) */
+  .patients-status {
+    grid-column: 2 / 3; /* Place in the second column */
+    grid-row: 2 / 3; /* Place in the second row */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  /* Doctors Section (Bottom Left) */
+  .doctors {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / 3; /* Place in columns 1 and 2 */
+    grid-row: 2 / 3; /* Place in the second row */
+    height: 333.18px; /* Keep the height fixed */
+    overflow-y: auto; /* Allow scrolling if content exceeds */
+  }
+  
+  ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .doctor-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+  }
+  
+  .doctor-specialty {
+    font-size: 14px;
+    color: #ea4335;
+    margin: 5px 0;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .doctor-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  
+  .doctor-info {
+    display: flex;
+    justify-content: space-between; /* Ensure items are spaced between */
+    align-items: center; /* Align items vertically centered */
+    width: 100%; /* Ensure full width */
+  }
+  
+  .doctor-details {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Take full width */
+  }
+  
+  .doctor-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  
+  .doctor-experience {
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  button {
+    background-color: #3497f9;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    border-radius: 40px;
+  }
+  .appointments-titles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .appointments-titles .title {
+    display: inline-block;
+  }
+  
+  .appointments-titles .new-appointment h2 {
+    margin-bottom: 5px; /* Reduced margin */
+    font-size: 16px; /* Reduced font size */
+  }
+  .appointments-titles .completed-appointment h2 {
+    margin-bottom: 5px; /* Reduced margin */
+    font-size: 16px; /* Reduced font size */
+  }
+  
+  .appointments-titles hr {
+    width: 100%;
+    border: 1px solid #000;
+  }
+  
+  .patient-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  /* Adjust the image and name alignment */
+  table td.patient-name {
+    display: flex;
+    align-items: center; /* Vertically align the image and text */
+    gap: 10px; /* Adjust the space between the image and name */
+  }
+  
+  table td img.patient-img {
+    vertical-align: middle; /* Aligns the image vertically with the name */
+    margin-right: 10px; /* Adds some space between the image and the name */
+  }
+  
+  table td span {
+    font-size: 16px; /* Adjust the font size of the patient's name */
+    line-height: 1.2; /* Adjusts the line-height for better vertical alignment */
+    vertical-align: middle; /* Ensures the name is vertically aligned with the image */
+  }
+  
+  .patient-status {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: Left;
+    width: 200px; /* Adjust as needed */
+    margin: auto;
+    margin: 20px 0;
+    width: 770px;
+    height: 333px;
+    margin-top: -4px;
+  
+    grid-column: span 1;
+  }
+  
+  .patient-status h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  .circle-chart {
+    position: relative;
+    width: 250px; /* Adjust size */
+    height: 250px; /* Adjust size */
+    border-radius: 50%;
+    background: conic-gradient(
+      orange 0% 30%,
+      /* Orange section */ green 30% 50%,
+      /* Green section */ blue 50% 80%,
+      /* Blue section */ gray 80% 100% /* Gray section */
+    );
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid #ddd; /* Optional border for the circle */
+  }
+  
+  .circle-chart {
+    position: relative;
+    width: 250px; /* Adjust size */
+    height: 250px; /* Adjust size */
+    border-radius: 50%;
+    background: conic-gradient(
+      orange 0% 30%,
+      /* Orange section */ green 30% 50%,
+      /* Green section */ blue 50% 80%,
+      /* Blue section */ gray 80% 100% /* Gray section */
+    );
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid #ddd; /* Optional border for the circle */
+  }
+  .circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .circle-background {
+    stroke: #e6e6e6; /* Light grey background circle */
+  }
+  
+  .orange {
+    stroke: #ffa500; /* Orange */
+  }
+  
+  .green {
+    stroke: #008000; /* Green */
+  }
+  
+  .blue {
+    stroke: #0000ff; /* Blue */
+  }
+  
+  .gray {
+    stroke: #808080; /* Gray */
+  }
+  
+  .percentage {
+    font-size: 8px;
+    fill: black;
+    text-anchor: middle;
+  }
+  
+  .percentage-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px; /* Increase the font size */
+    font-weight: bold; /* Make the font bold */
+    color: #333; /* Set a darker color for better contrast */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional shadow for better readability */
+  }
+  
+  .percentage span {
+    display: block;
+    margin-bottom: 5px; /* Adjust spacing between percentages */
+  }
+  
+  .circle-chart .percentage-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px; /* Adjust size as needed */
+    font-weight: bold;
+    color: #333; /* Adjust color if needed */
+  }
+  
+  @keyframes progress {
+    0% {
+      stroke-dasharray: 0, 100;
+    }
+    100% {
+      stroke-dasharray: 50, 100; /* Adjust the final stroke length for the progress */
+    }
+  }
+  
+  .circle-chart .percentage span {
+    display: block;
+    margin-bottom: 5px; /* Adjust spacing between percentages */
+  }
+  .circle-chart .percentage-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px; /* Adjust size as needed */
+    font-weight: bold;
+    color: #333; /* Adjust color if needed */
+  }
+  .patient-status ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+  
+  .patient-status ul li {
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: left;
+  }
+  
+  .legend {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .legend.orange {
+    background-color: orange;
+  }
+  .legend.green {
+    background-color: green;
+  }
+  .legend.blue {
+    background-color: blue;
+  }
+  .legend.gray {
+    background-color: gray;
+  }
+  .status-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .status-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 20px;
+  }
+  .status-text ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  .status-text li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .status-text .legend {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  

@@ -1,0 +1,10 @@
+<div class="doctor-details">
+ 
+  
+  <h3 *ngIf="doctorNom && doctorPrenom">
+    {{ doctorNom }} {{ doctorPrenom }}
+  </h3>
+  <h3 *ngIf="!doctorNom || !doctorPrenom">
+    Doctor details are not available.
+  </h3>
+</div>

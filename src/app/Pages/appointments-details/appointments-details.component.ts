@@ -4,26 +4,33 @@ import { ConsultationsService } from '../../services/consultations.service';
 import { SidebarComponent } from '../../components/sidebar/sidebar.component';
 import { HeaderProfileComponent } from '../../components/header-profile/header-profile.component';
 import { CommonModule } from '@angular/common';
-
+import { SidebarDoctorComponent } from '../../components/sidebar-doctor/sidebar-doctor.component';
+import { Router } from '@angular/router';
+import { SidebarInfComponent } from '../../components/sidebar-inf/sidebar-inf.component';
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-appointments-details',
-  imports: [CommonModule, SidebarComponent, HeaderProfileComponent],
+  imports: [ RouterModule,CommonModule, SidebarComponent, SidebarInfComponent, HeaderProfileComponent,SidebarDoctorComponent],
   templateUrl: './appointments-details.component.html',
   styleUrls: ['./appointments-details.component.css'],
 })
-export class AppointmentsDetailsComponent implements OnInit {
+export class AppointmentsDetailsComponent implements OnInit  {
   appointmentId: string = '';
   appointmentDetails: any = null;
   medicalHistory: any = null;
   exams: any[] = [];
   soins: any[] = [];
-
+  userRole: string | undefined;
+  patientId: string | null = null; 
   constructor(
     private route: ActivatedRoute,
-    private consultationsService: ConsultationsService
+    private consultationsService: ConsultationsService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
+    this.getUserRole();
+    this.patientId = localStorage.getItem('currentPatientId'); 
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.appointmentId = id;
@@ -51,7 +58,11 @@ export class AppointmentsDetailsComponent implements OnInit {
       console.error('Appointment ID is null or undefined');
     }
   }
-
+  getUserRole(): void {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    this.userRole = user.role;
+    console.log('User Role:', this.userRole);
+  }
   private fetchMedicalHistory(dpiId: string): void {
     this.consultationsService.getDpiById(dpiId).subscribe(
       (data) => {
@@ -98,5 +109,9 @@ export class AppointmentsDetailsComponent implements OnInit {
         }
       );
     }
+  }
+  onLogout(): void {
+    localStorage.clear(); // Clear local storage
+    this.router.navigate(['/login']); // Redirect to login page
   }
 }

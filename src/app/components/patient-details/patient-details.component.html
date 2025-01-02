@@ -1,0 +1,45 @@
+<div class="patient-content">
+    <!-- Section gauche avec photo et détails -->
+    <div class="patient-left">
+      
+      <div class="patient-details">
+        <div class="patient-info-item">
+          <span class="info-title">Nom:</span>
+          <span class="info-value">{{ patientData?.nom }} {{ patientData?.prenom }}</span>
+        </div>
+        <div class="patient-info-item">
+          <span class="info-title">NSS:</span>
+          <span class="info-value">{{ patientData?.nss }}</span>
+        </div>
+        <div class="patient-info-item">
+          <span class="info-title">Date de naissance:</span>
+          <span class="info-value">{{ patientData?.date_naissance }}</span>
+        </div>
+        <div class="patient-info-item">
+          <span class="info-title">Adresse:</span>
+          <span class="info-value">{{ patientData?.addresse }}</span>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Section droite avec informations supplémentaires -->
+    <div class="patient-right">
+      <div class="patient-info-item">
+        <span class="info-title">Email:</span>
+        <span class="info-value">{{ patientData?.email }}</span>
+      </div>
+      <div class="patient-info-item">
+        <span class="info-title">Numéro de téléphone:</span>
+        <span class="info-value">{{ patientData?.telephone }}</span>
+      </div>
+      <div class="patient-info-item">
+        <span class="info-title">Médecin traitant:</span>
+        <span class="info-value">{{ patientData?.medecin_traitant_nom || 'Non spécifié' }}</span>
+      </div>
+      <div class="patient-info-item">
+        <span class="info-title">Numéro à contacter:</span>
+        <span class="info-value">{{ patientData?.personne_contact || 'Non spécifié' }}</span>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,17 @@
+<aside class="sidebar">
+    <div class="logo">
+      <img src="/Logo.png" alt="Dawini Logo" />
+    </div>
+    <ul class="menu">
+      <li [ngClass]="{'active': isActive('/patientlist')}">
+        <a routerLink="/patientlist"><i class="fas fa-users icon"></i> Patients</a>
+      </li>
+      <li [ngClass]="{'active': isActive('/add-care/' + consultationId)}">
+        <a [routerLink]="['/add-care', consultationId]"><i class="fas fa-user"></i> Soins</a>
+      </li>
+    </ul>
+    <a href="#" class="logout" (click)="onLogout()">
+      <i class="fas fa-sign-out-alt"></i> Logout
+    </a>
+  </aside>
+  

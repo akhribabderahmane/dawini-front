@@ -1,0 +1,30 @@
+.signature {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align the items to the left */
+}
+
+.doctor-name {
+  display: inline-block;
+  padding: 8px 16px;
+  background: linear-gradient(to right, white, #8E44AD); /* White to purple gradient */
+  border: 2px solid #8E44AD; /* Purple border */
+  border-radius: 8px; /* Rounded corners */
+  font-size: 18px;
+  color: #8E44AD; /* Purple text */
+  font-weight: bold;
+  width: auto; /* Set width to auto for dynamic sizing */
+  max-width: 200px; /* Adjust the width to your preference */
+  word-wrap: break-word; /* Ensure the text fits inside the container */
+}
+
+.signature p {
+  font-size: 16px;
+  margin: 0 0 5px 20px;
+}
+
+.signature img {
+  margin-top: 10px;
+  width: 150px; /* Adjust the width of the signature image if necessary */
+  margin-right: 40px;
+}

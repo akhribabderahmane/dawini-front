@@ -1,0 +1,60 @@
+<body>
+  <app-sidebar-doctor></app-sidebar-doctor>
+
+  <div class="main-content">
+    <app-header-profile></app-header-profile>
+    <div class="header">
+      <h1>Exam</h1>
+    </div>
+
+    <div class="exam-page">
+      <div class="navigation-bar">
+        <button class="nav-button">New appointment</button>
+      </div>
+
+      <div class="exam-container">
+        <form>
+          <div class="form-group">
+            <label for="date">Date and Time of the Exam:</label>
+            <input
+              type="datetime-local"
+              id="date"
+              [(ngModel)]="exam.date"
+              name="date"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="type">Type of the Exam:</label>
+            <input
+    type="text"
+    id="type"
+    [(ngModel)]="exam.type_examen"
+    name="type"
+    placeholder="Enter the type of exam"
+  />
+          </div>
+
+          <div class="form-group">
+            <label for="comments">Instructions / Comments:</label>
+            <textarea
+              class="textdoctor"
+              id="comments"
+              [(ngModel)]="exam.comments"
+              name="comments"
+              rows="5"
+              placeholder="A text field where the doctor can specify details."
+            ></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="actions">
+        <button class="cancel-btn" (click)="onCancel()">Cancel</button>
+        <button class="next-btn" (click)="onNext()">Next</button>
+      </div>
+    </div>
+  </div>
+
+ 
+</body>

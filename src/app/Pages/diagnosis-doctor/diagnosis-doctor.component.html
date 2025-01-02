@@ -1,0 +1,40 @@
+<body>
+    <app-sidebar-doctor></app-sidebar-doctor>
+  
+    <div class="main-content">
+      <app-header-profile></app-header-profile>
+      <div class="header">
+        <h1>Diagnosis</h1>
+      </div>
+  
+      <div class="diagnosis-page">
+        <div class="navigation-bar">
+          <button class="nav-button">New appointment</button>
+        </div>
+  
+        <div class="diagnosis-container">
+          <form>
+            <div class="form-group">
+              <label for="diagnosis-text">Diagnosis:</label>
+              <textarea
+                id="diagnosis-text"
+                [(ngModel)]="diagnosis.text"
+                name="diagnosis-text"
+                rows="5"
+                placeholder="Un champ de texte où le médecin peut saisir le diagnostic, ou un menu déroulant avec des suggestions de diagnostics possibles (exemple : grippe, hypertension, etc.)."
+                required
+                (input)="adjustTextAreaHeight($event)"
+              ></textarea>
+            </div>
+          </form>
+        </div>
+  
+        <div class="actions">
+          <button class="exam-btn" (click)="onRequestExam()">Demand for exam</button>
+          <button class="cancel-btn" (click)="onCancel()">Cancel</button>
+          <button class="next-btn" (click)="onNext()">Next</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  

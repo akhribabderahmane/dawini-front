@@ -1,0 +1,98 @@
+.sidebar {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar .logo {
+    width: 150px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  }
+  
+  .nav-links {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-links > li {
+    width: 100%;
+    margin: 15px 0;
+  }
+  
+  .nav-links > li > a {
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    color: #555;
+    font-size: 16px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-links > li > a:hover {
+    background-color: #eaeaea;
+    color: #6c63ff;
+  }
+  
+  .nav-links .submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 20px;
+    border-left: 2px solid #eaeaea;
+  }
+  
+  .nav-links .submenu li {
+    margin: 10px 0;
+    padding-left: 10px;
+  }
+  
+  .nav-links .submenu li a {
+    font-size: 14px;
+    color: #777;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links .submenu li.active a {
+    color: #6c63ff;
+    font-weight: bold;
+  }
+  
+  .icon {
+    margin-right: 10px;
+    font-size: 16px;
+    color: #6c63ff;
+  }
+  
+  .logout-btn {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    color: #363636;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100%;
+  }
+  
+  .logout-btn:hover {
+    background-color: #ffeaea;
+    color: #ff4d4d;
+  }

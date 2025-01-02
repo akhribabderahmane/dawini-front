@@ -55,9 +55,19 @@ export class LoginComponent {
         localStorage.setItem('role', response.user.role);
         localStorage.setItem('nom', response.user.nom);
         localStorage.setItem('prenom', response.user.prenom);
-    
-        // Redirection basée sur le rôle
-        this.redirectToRolePage(response.user.role, response.user.id);
+        if (response.user.role === 'infermier') {
+          this.userService.getInfermierId(response.user.id).subscribe(
+            (infermierData: any) => {
+              localStorage.setItem('infermierId', infermierData.id.toString());
+              console.log('Infermier ID stored:', infermierData.id);
+              this.redirectToRolePage(response.user.role, response.user.id);
+            },
+            (error) => console.error('Error fetching infermier data:', error)
+          );
+        } else {
+          // Redirect based on role for non-infermier roles
+          this.redirectToRolePage(response.user.role, response.user.id);
+        }
       },
       (error) => {
         console.error('Login failed:', error);
